@@ -2191,28 +2191,4 @@ ol {
     }
 }
 
-/* TESTE — eliminar qualquer sombra junto ao header */
-.site-header,
-.site-header *,
-.site-header::before,
-.site-header::after {
-    box-shadow: none !important;
-}
-
-.site-header {
-    border-bottom: none !important;
-}
-
-/* TESTE DEFINITIVO */
-* {
-    box-shadow: none !important;
-}
-
-/* TESTE — remover completamente o efeito visual do header */
-.site-header {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: var(--cream) !important;
-    border: none !important;
-    box-shadow: none !important;
-}
+ 
