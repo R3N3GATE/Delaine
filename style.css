@@ -1,0 +1,362 @@
+/* =========================================================
+   DELAINE.MAKEUP — STYLE.CSS
+   Identidade: Borgonha • Ouro Rosé • Cobre
+   ========================================================= */
+
+:root {
+    --burgundy: #7A263A;
+    --burgundy-dark: #4E1625;
+    --burgundy-light: #9B3A50;
+
+    --rose-gold: #B76E79;
+    --rose-gold-light: #D9A0A8;
+
+    --copper: #B87333;
+    --copper-light: #D49A63;
+
+    --cream: #FFF9F5;
+    --white: #FFFFFF;
+    --black: #21191B;
+    --gray: #756C6E;
+    --light-gray: #F5EFED;
+    --border: #E8D9D5;
+
+    --shadow: 0 10px 35px rgba(78, 22, 37, 0.10);
+    --shadow-hover: 0 18px 45px rgba(78, 22, 37, 0.18);
+
+    --radius: 16px;
+    --transition: 0.3s ease;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 249, 245, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--copper);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    position: relative;
+    color: var(--black);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--rose-gold);
+    transition: var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--burgundy);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(78, 22, 37, 0.92),
+            rgba(78, 22, 37, 0.62),
+            rgba(78, 22, 37, 0.18)
+        ),
+        url("images/hero.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    width: min(720px, 100%);
+    color: var(--white);
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 1.12rem;
+    line-height: 1.8;
+    color: #FFF3F1;
+    margin-bottom: 35px;
+}
+
+.hero .btn {
+    margin-right: 10px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 999px;
+
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        var(--rose-gold),
+        var(--copper)
+    );
+
+    color: var(--white);
+    box-shadow: 0 8px 25px rgba(183, 110, 121, 0.28);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 30px rgba(183, 110, 121, 0.38);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--burgundy);
+}
+
+.btn-danger {
+    background: #A63246;
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background: #872638;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section {
+    padding: 95px 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 55px;
+}
+
+.section-header .eyebrow {
+    color: var(--copper);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--burgundy-dark);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--gray);
+}
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+
+.about {
+    background: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-image {
+    min-height: 520px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.7rem;
+    color: var(--burgundy-dark);
+    margin-bottom: 22px;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+/* =========================================================
+   SERVIÇOS
+   ========================================================= */
+
+.services {
+    background: var(--cream);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-8
