@@ -25,7 +25,10 @@
 
     <title>Delaine.Makeup | Beleza que realça você</title>
 
-    <!-- Google Fonts -->
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -34,7 +37,11 @@
         rel="stylesheet"
     >
 
-    <!-- CSS principal -->
+    <!-- =====================================================
+         CSS PRINCIPAL
+         Partilhado com admin.html
+    ====================================================== -->
+
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -49,6 +56,7 @@
         <nav class="navbar">
 
             <!-- LOGÓTIPO -->
+
             <a
                 href="#inicio"
                 class="logo"
@@ -58,8 +66,11 @@
             </a>
 
 
-            <!-- BOTÃO MENU
-                 Fica visível no computador e no telemóvel -->
+            <!-- =================================================
+                 BOTÃO MENU
+                 Visível no computador e no telemóvel
+            ================================================== -->
+
             <button
                 id="menuToggle"
                 class="menu-toggle"
@@ -74,24 +85,39 @@
             </button>
 
 
-            <!-- MENU DOS CLIENTES
-                 NÃO COLOCAR ADMINISTRADOR AQUI -->
+            <!-- =================================================
+                 MENU PÚBLICO
+                 NÃO MOSTRAR ADMINISTRADOR AQUI
+            ================================================== -->
+
             <div
                 id="navMenu"
                 class="nav-menu"
             >
 
-                <a href="#inicio">Início</a>
+                <a href="#inicio">
+                    Início
+                </a>
 
-                <a href="#sobre">Sobre</a>
+                <a href="#sobre">
+                    Sobre
+                </a>
 
-                <a href="#servicos">Serviços</a>
+                <a href="#servicos">
+                    Serviços
+                </a>
 
-                <a href="#galeria">Galeria</a>
+                <a href="#galeria">
+                    Galeria
+                </a>
 
-                <a href="#marcacao">Marcação</a>
+                <a href="#marcacao">
+                    Marcação
+                </a>
 
-                <a href="#contactos">Contactos</a>
+                <a href="#contactos">
+                    Contactos
+                </a>
 
             </div>
 
@@ -163,7 +189,9 @@
 
                     <div class="hero-card">
 
-                        <span>BEAUTY</span>
+                        <span>
+                            BEAUTY
+                        </span>
 
                         <strong>
                             Delaine
@@ -361,7 +389,6 @@
                 <div class="services-grid">
 
 
-                    <!-- SERVIÇO 1 -->
                     <article class="service-card animate fade-up">
 
                         <div class="service-number">
@@ -392,7 +419,6 @@
                     </article>
 
 
-                    <!-- SERVIÇO 2 -->
                     <article class="service-card animate fade-up">
 
                         <div class="service-number">
@@ -423,7 +449,6 @@
                     </article>
 
 
-                    <!-- SERVIÇO 3 -->
                     <article class="service-card animate fade-up">
 
                         <div class="service-number">
@@ -454,7 +479,6 @@
                     </article>
 
 
-                    <!-- SERVIÇO 4 -->
                     <article class="service-card animate fade-up">
 
                         <div class="service-number">
@@ -523,8 +547,9 @@
 
                 <div class="gallery-grid">
 
-
-                    <div class="gallery-item gallery-item-large animate zoom-in">
+                    <div
+                        class="gallery-item gallery-item-large animate zoom-in"
+                    >
 
                         <div class="gallery-placeholder">
                             <span>Delaine.Makeup</span>
@@ -582,6 +607,8 @@
 
         <!-- =====================================================
              MARCAÇÃO
+             Os dados enviados serão utilizados pelo admin.html
+             através do mesmo script.js
         ====================================================== -->
 
         <section
@@ -592,6 +619,7 @@
             <div class="container">
 
                 <div class="booking-wrapper">
+
 
                     <div class="booking-intro animate fade-left">
 
@@ -620,6 +648,7 @@
                                 </span>
 
                                 <div>
+
                                     <strong>
                                         Atendimento personalizado
                                     </strong>
@@ -628,6 +657,7 @@
                                         Cada cliente recebe atenção
                                         especial aos seus detalhes.
                                     </p>
+
                                 </div>
 
                             </div>
@@ -640,6 +670,7 @@
                                 </span>
 
                                 <div>
+
                                     <strong>
                                         Experiência Delaine
                                     </strong>
@@ -648,6 +679,7 @@
                                         Beleza, conforto e confiança
                                         em cada atendimento.
                                     </p>
+
                                 </div>
 
                             </div>
@@ -657,7 +689,12 @@
                     </div>
 
 
-                    <!-- FORMULÁRIO -->
+                    <!-- =================================================
+                         FORMULÁRIO DE MARCAÇÃO
+                         IDs compatíveis com script.js
+                         e com o painel admin.html
+                    ================================================== -->
+
                     <div class="booking-form-wrapper animate fade-right">
 
                         <form
@@ -1107,7 +1144,7 @@
 
 
     <!-- =========================================================
-         BOTÃO VOLTAR AO TOPO
+         VOLTAR AO TOPO
     ========================================================== -->
 
     <button
@@ -1121,8 +1158,9 @@
 
 
     <!-- =========================================================
-         JAVASCRIPT
-         Será atualizado quando enviares o teu script.js
+         JAVASCRIPT PRINCIPAL
+         O mesmo script.js é utilizado pelo admin.html.
+         As marcações ficam disponíveis para o painel.
     ========================================================== -->
 
     <script src="./script.js"></script>
