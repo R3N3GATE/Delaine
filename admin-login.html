@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Acesso reservado à área administrativa da Delaine.Makeup."
+    >
+
+    <meta
+        name="theme-color"
+        content="#5a2635"
+    >
+
+    <title>Delaine.Makeup | Administração</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-container">
+
+        <section
+            class="auth-card"
+            aria-labelledby="adminLoginTitle"
+        >
+
+            <!-- Logo -->
+            <a
+                href="./index.html"
+                class="auth-logo"
+                aria-label="Delaine.Makeup — voltar ao site"
+            >
+                Delaine<span>.Makeup</span>
+            </a>
+
+            <!-- Cabeçalho -->
+            <div class="auth-header">
+
+                <p class="eyebrow">
+                    ÁREA RESTRITA
+                </p>
+
+                <h1 id="adminLoginTitle">
+                    Acesso de <span>Administrador.</span>
+                </h1>
+
+                <p>
+                    Inicie sessão para aceder ao painel administrativo
+                    da Delaine.Makeup.
+                </p>
+
+            </div>
+
+            <!-- Login -->
+            <form
+                id="admin-login"
+                class="auth-form"
+                novalidate
+            >
+
+                <!-- Utilizador -->
+                <div class="form-group">
+
+                    <label for="admin-username">
+                        Utilizador
+                    </label>
+
+                    <input
+                        type="text"
+                        id="admin-username"
+                        name="username"
+                        placeholder="Introduza o utilizador"
+                        autocomplete="username"
+                        autocapitalize="none"
+                        spellcheck="false"
+                        required
+                    >
+
+                </div>
+
+                <!-- Palavra-passe -->
+                <div class="form-group">
+
+                    <label for="admin-password">
+                        Palavra-passe
+                    </label>
+
+                    <input
+                        type="password"
+                        id="admin-password"
+                        name="password"
+                        placeholder="Introduza a palavra-passe"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+                <!-- Mensagem do sistema -->
+                <div
+                    id="admin-login-message"
+                    class="auth-message"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+                <!-- Botão -->
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-full"
+                >
+                    Entrar na administração
+                </button>
+
+            </form>
+
+            <!-- Regresso ao site -->
+            <a
+                href="./index.html"
+                class="auth-back"
+            >
+                ← Voltar ao site
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript principal -->
+    <script src="./script.js"></script>
+
+</body>
+</html>
