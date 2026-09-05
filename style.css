@@ -133,9 +133,8 @@ ol {
 }
 
 .site-header.scrolled {
-    background: var(--cream);
-    border-bottom-color: transparent;
-    box-shadow: none !important;
+    background: rgba(255, 250, 247, 0.98);
+    border-bottom-color: var(--border);
 }
 
 
