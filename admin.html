@@ -1,1 +1,477 @@
-.
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Painel administrativo da Delaine.Makeup."
+    >
+
+    <meta
+        name="theme-color"
+        content="#5a2635"
+    >
+
+    <title>
+        Delaine.Makeup | Administração
+    </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+</head>
+
+<body class="admin-page">
+
+    <!-- =====================================================
+         CABEÇALHO ADMINISTRATIVO
+    ====================================================== -->
+
+    <header class="site-header admin-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="Delaine.Makeup"
+            >
+                Delaine<span>.Makeup</span>
+            </a>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="navMenu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div
+                id="navMenu"
+                class="nav-menu"
+            >
+                <a href="index.html">
+                    Site
+                </a>
+
+                <a href="#dashboard">
+                    Dashboard
+                </a>
+
+                <a href="#marcacoes-admin">
+                    Marcações
+                </a>
+
+                <button
+                    type="button"
+                    class="admin-logout-btn"
+                    data-admin-logout
+                >
+                    Terminar sessão
+                </button>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         PAINEL ADMINISTRATIVO
+    ====================================================== -->
+
+    <main
+        data-admin-panel
+        class="admin-main"
+    >
+
+        <!-- =================================================
+             INTRODUÇÃO
+        ================================================== -->
+
+        <section
+            id="dashboard"
+            class="admin-hero section"
+        >
+
+            <div class="container">
+
+                <div class="admin-hero-content animate fade-up">
+
+                    <p class="eyebrow">
+                        DELAINE.MAKEUP
+                    </p>
+
+                    <h1>
+                        Painel de
+                        <span>Administração.</span>
+                    </h1>
+
+                    <p>
+                        Gerencie as marcações e acompanhe
+                        os pedidos dos seus clientes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ESTATÍSTICAS
+        ================================================== -->
+
+        <section class="admin-stats-section">
+
+            <div class="container">
+
+                <div class="admin-stats-grid">
+
+                    <!-- TOTAL -->
+
+                    <article
+                        class="admin-stat-card animate fade-up"
+                    >
+
+                        <div class="admin-stat-icon">
+                            ✦
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Total de marcações
+                            </span>
+
+                            <strong data-total-bookings>
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PENDENTES -->
+
+                    <article
+                        class="admin-stat-card animate fade-up"
+                    >
+
+                        <div class="admin-stat-icon">
+                            ◷
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Pendentes
+                            </span>
+
+                            <strong data-pending-bookings>
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CONFIRMADAS -->
+
+                    <article
+                        class="admin-stat-card animate fade-up"
+                    >
+
+                        <div class="admin-stat-icon">
+                            ✓
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Confirmadas
+                            </span>
+
+                            <strong data-confirmed-bookings>
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CANCELADAS -->
+
+                    <article
+                        class="admin-stat-card animate fade-up"
+                    >
+
+                        <div class="admin-stat-icon">
+                            ×
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Canceladas
+                            </span>
+
+                            <strong data-cancelled-bookings>
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MARCAÇÕES
+        ================================================== -->
+
+        <section
+            id="marcacoes-admin"
+            class="admin-bookings section"
+        >
+
+            <div class="container">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            GESTÃO
+                        </p>
+
+                        <h2>
+                            Pedidos de
+                            <span>marcação.</span>
+                        </h2>
+
+                        <p>
+                            Consulte, confirme ou cancele
+                            os pedidos enviados pelos clientes.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-refresh-admin
+                    >
+                        ↻ Atualizar
+                    </button>
+
+                </div>
+
+
+                <!-- =========================================
+                     TABELA
+                ========================================== -->
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Nome
+                                </th>
+
+                                <th>
+                                    Telefone
+                                </th>
+
+                                <th>
+                                    E-mail
+                                </th>
+
+                                <th>
+                                    Serviço
+                                </th>
+
+                                <th>
+                                    Data
+                                </th>
+
+                                <th>
+                                    Hora
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                                <th>
+                                    Mensagem
+                                </th>
+
+                                <th>
+                                    Ações
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody data-bookings-table>
+
+                            <tr>
+
+                                <td
+                                    colspan="9"
+                                    class="empty-bookings"
+                                >
+                                    A carregar marcações...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INFORMAÇÃO
+        ================================================== -->
+
+        <section class="admin-information section">
+
+            <div class="container">
+
+                <div class="admin-info-card animate fade-up">
+
+                    <div class="admin-info-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DELAINE.MAKEUP
+                        </p>
+
+                        <h3>
+                            Gestão de marcações
+                        </h3>
+
+                        <p>
+                            Os pedidos enviados através do
+                            formulário de marcação aparecem
+                            automaticamente neste painel.
+                            Pode confirmar, cancelar ou eliminar
+                            cada pedido.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="site-footer admin-footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <p>
+                    ©
+                    <span id="currentYear"></span>
+                    Delaine.Makeup.
+                    Todos os direitos reservados.
+                </p>
+
+                <p>
+                    Área administrativa
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BOTÃO VOLTAR AO TOPO
+    ====================================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Voltar ao topo"
+    >
+        ↑
+    </button>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
