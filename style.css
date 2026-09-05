@@ -134,7 +134,7 @@ ol {
 .site-header.scrolled {
     background: rgba(255, 250, 247, 0.98);
     border-bottom: 0;
-    box-shadow: none !important;
+    box-shadow: none ;
 }
 
 
@@ -208,7 +208,7 @@ ol {
     flex-direction: column;
     gap: 5px;
 
-    box-shadow: 0 8px 20px rgba(90, 38, 53, 0.18);
+    box-shadow: none;
 
     transition:
         transform var(--transition),
