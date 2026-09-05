@@ -1,264 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
         content="Delaine.Makeup — maquilhagem profissional, elegante e personalizada."
     >
 
-    <meta
-        name="theme-color"
-        content="#5a2635"
-    >
+    <meta name="theme-color" content="#5a2635">
 
     <title>Delaine.Makeup | Beleza que realça você</title>
 
     <link rel="stylesheet" href="./style.css">
 
-</head>
-
-<body>
-
 
     <!-- ==================================================
-         HEADER
+         CORES + MENU MOBILE + ANIMAÇÕES ESSENCIAIS
     =================================================== -->
 
-    <header class="site-header">
-
-        <nav class="navbar">
-
-            <!-- LOGÓTIPO -->
-
-            <a
-                href="#inicio"
-                class="logo animate fade-down"
-            >
-                Delaine<span>.Makeup</span>
-            </a>
-
-
-            <!-- BOTÃO MENU -->
-
-            <button
-                id="menuToggle"
-                class="menu-toggle"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="navMenu"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-
-            <!-- MENU -->
-
-            <div
-                id="navMenu"
-                class="nav-menu"
-            >
-
-                <a href="#inicio">
-                    Início
-                </a>
-
-                <a href="#sobre">
-                    Sobre
-                </a>
-
-                <a href="#servicos">
-                    Serviços
-                </a>
-
-                <a href="#galeria">
-                    Galeria
-                </a>
-
-                <a href="#marcacao">
-                    Marcação
-                </a>
-
-                <a href="#contactos">
-                    Contactos
-                </a>
-
-                <a
-                    href="admin.html"
-                    class="admin-link"
-                >
-                    Administrador
-                </a>
-
-            </div>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- ==================================================
-         CONTEÚDO PRINCIPAL
-    =================================================== -->
-
-    <main>
-
-
-        <!-- ==================================================
-             HERO
-        =================================================== -->
-
-        <section
-            id="inicio"
-            class="hero"
-        >
-
-            <div class="hero-content">
-
-
-                <span
-                    class="hero-label animate fade-down"
-                >
-                    DELAINE.MAKEUP
-                </span>
-
-
-                <h1
-                    class="animate fade-up delay-1"
-                >
-                    A sua beleza,
-                    <br>
-                    elevada a outro
-                    <br>
-                    nível.
-                </h1>
-
-
-                <p
-                    class="animate fade-up delay-2"
-                >
-                    Maquilhagem profissional, elegante e
-                    personalizada para realçar a sua beleza
-                    em todos os momentos especiais.
-                </p>
-
-
-                <div
-                    class="hero-buttons animate fade-up delay-3"
-                >
-
-                    <a
-                        href="#marcacao"
-                        class="btn btn-primary"
-                    >
-                        Fazer marcação
-                    </a>
-
-
-                    <a
-                        href="#servicos"
-                        class="btn btn-outline"
-                    >
-                        Ver serviços
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ==================================================
-             SOBRE
-        =================================================== -->
-
-        <section
-            id="sobre"
-            class="section about-section"
-        >
-
-            <div class="container">
-
-
-                <div
-                    class="section-heading animate fade-up"
-                >
-
-                    <span class="section-label">
-                        SOBRE NÓS
-                    </span>
-
-                    <h2>
-                        Beleza criada
-                        <span>para si.</span>
-                    </h2>
-
-                    <p>
-                        Uma experiência de beleza pensada
-                        para realçar a sua personalidade,
-                        confiança e autenticidade.
-                    </p>
-
-                </div>
-
-
-                <div class="about-grid">
-
-
-                    <!-- IMAGEM / IDENTIDADE -->
-
-                    <div
-                        class="image-frame animate fade-left"
-                    >
-
-                        <div class="image-placeholder">
-
-                            <span>
-                                DELAINE
-                            </span>
-
-                            <small>
-                                MAKEUP
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- TEXTO -->
-
-                    <div
-                        class="about-content animate fade-right"
-                    >
-
-                        <span class="section-label">
-                            A NOSSA ESSÊNCIA
-                        </span>
-
-
-                        <h3>
-                            Elegância, confiança
-                            e autenticidade.
-                        </h3>
-
-
-                        <p>
-                            Na Delaine.Makeup acreditamos
-                            que a maqu
+    <style>
+
+        :root {
+            --burgundy: #5a2635;
+            --burgundy-dark: #421a27;
+            --burgundy-light: #743b4c;
+            --gold: #b87935;
+            --gold-light: #d89a55;
+            --rose: #c59ba5;
+            --rose-light: #ead8dc;
+            --cream: #fffaf7;
+            --white: #ffffff;
+            --text: #3c3033;
+            --text-light: #776c70;
+        }
+
+
+        /* CORES BASE */
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+        }
+
+
+        /* ==================================================
+           HEADER
+        =================================================== */
+
+        .site-header {
+            background: rgba(255, 250, 247, 0.97);
+            border-bottom: 1px solid #eadfe0;
+            box-shadow: 0 5px 25px rgba(90, 
