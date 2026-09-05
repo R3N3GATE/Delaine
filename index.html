@@ -1,57 +1,1131 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Delaine.Makeup — maquilhagem profissional, elegante e personalizada."
+        content="Delaine.Makeup — maquilhagem profissional, elegante e personalizada para realçar a sua beleza."
     >
 
-    <meta name="theme-color" content="#5a2635">
+    <meta
+        name="theme-color"
+        content="#5a2635"
+    >
+
+    <meta
+        name="author"
+        content="Delaine.Makeup"
+    >
 
     <title>Delaine.Makeup | Beleza que realça você</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER / MENU
+    ========================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <nav class="navbar">
+
+            <!-- LOGÓTIPO -->
+            <a
+                href="#inicio"
+                class="logo"
+                aria-label="Delaine.Makeup - Página inicial"
+            >
+                Delaine<span>.Makeup</span>
+            </a>
 
 
-    <!-- ==================================================
-         CORES + MENU MOBILE + ANIMAÇÕES ESSENCIAIS
-    =================================================== -->
-
-    <style>
-
-        :root {
-            --burgundy: #5a2635;
-            --burgundy-dark: #421a27;
-            --burgundy-light: #743b4c;
-            --gold: #b87935;
-            --gold-light: #d89a55;
-            --rose: #c59ba5;
-            --rose-light: #ead8dc;
-            --cream: #fffaf7;
-            --white: #ffffff;
-            --text: #3c3033;
-            --text-light: #776c70;
-        }
+            <!-- BOTÃO MENU
+                 Fica visível no computador e no telemóvel -->
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="navMenu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
 
-        /* CORES BASE */
+            <!-- MENU DOS CLIENTES
+                 NÃO COLOCAR ADMINISTRADOR AQUI -->
+            <div
+                id="navMenu"
+                class="nav-menu"
+            >
 
-        body {
-            background: var(--cream);
-            color: var(--text);
-        }
+                <a href="#inicio">Início</a>
+
+                <a href="#sobre">Sobre</a>
+
+                <a href="#servicos">Serviços</a>
+
+                <a href="#galeria">Galeria</a>
+
+                <a href="#marcacao">Marcação</a>
+
+                <a href="#contactos">Contactos</a>
+
+            </div>
+
+        </nav>
+
+    </header>
 
 
-        /* ==================================================
-           HEADER
-        =================================================== */
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+    ========================================================== -->
 
-        .site-header {
-            background: rgba(255, 250, 247, 0.97);
-            border-bottom: 1px solid #eadfe0;
-            box-shadow: 0 5px 25px rgba(90, 
+    <main>
+
+
+        <!-- =====================================================
+             HERO / INÍCIO
+        ====================================================== -->
+
+        <section
+            id="inicio"
+            class="hero section"
+        >
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text animate fade-up">
+
+                    <p class="eyebrow">
+                        DELAINE.MAKEUP
+                    </p>
+
+                    <h1>
+                        A sua beleza,
+                        <span>elevada a outro nível.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Maquilhagem profissional, elegante e personalizada
+                        para realçar a sua beleza em todos os momentos especiais.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#marcacao"
+                            class="btn btn-primary"
+                        >
+                            Fazer marcação
+                        </a>
+
+                        <a
+                            href="#servicos"
+                            class="btn btn-outline"
+                        >
+                            Ver serviços
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-decoration animate zoom-in">
+
+                    <div class="hero-circle"></div>
+
+                    <div class="hero-card">
+
+                        <span>BEAUTY</span>
+
+                        <strong>
+                            Delaine
+                        </strong>
+
+                        <small>
+                            Makeup Artist
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
+
+        <section
+            id="sobre"
+            class="about section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading animate fade-up">
+
+                    <p class="eyebrow">
+                        SOBRE NÓS
+                    </p>
+
+                    <h2>
+                        Beleza criada
+                        <span>para si.</span>
+                    </h2>
+
+                    <p>
+                        Na Delaine.Makeup acreditamos que a maquilhagem
+                        não serve para esconder, mas sim para realçar
+                        aquilo que torna cada mulher única.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-content animate fade-left">
+
+                        <p class="about-label">
+                            DELAINE.MAKEUP
+                        </p>
+
+                        <h3>
+                            A nossa essência
+                        </h3>
+
+                        <p>
+                            Criamos looks personalizados para diferentes
+                            ocasiões, respeitando o estilo, a personalidade
+                            e os desejos de cada cliente.
+                        </p>
+
+                        <p>
+                            Cada detalhe é pensado para proporcionar
+                            confiança, elegância e uma experiência
+                            verdadeiramente especial.
+                        </p>
+
+
+                        <div class="about-values">
+
+                            <div class="value-item">
+
+                                <span class="value-number">
+                                    01
+                                </span>
+
+                                <div>
+                                    <h4>
+                                        Elegância
+                                    </h4>
+
+                                    <p>
+                                        Beleza sofisticada e intemporal.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="value-item">
+
+                                <span class="value-number">
+                                    02
+                                </span>
+
+                                <div>
+                                    <h4>
+                                        Confiança
+                                    </h4>
+
+                                    <p>
+                                        Realçamos o melhor de cada cliente.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="value-item">
+
+                                <span class="value-number">
+                                    03
+                                </span>
+
+                                <div>
+                                    <h4>
+                                        Autenticidade
+                                    </h4>
+
+                                    <p>
+                                        Cada maquilhagem é criada para si.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-visual animate fade-right">
+
+                        <div class="about-image-placeholder">
+
+                            <span>
+                                Delaine
+                            </span>
+
+                            <strong>
+                                BEAUTY
+                            </strong>
+
+                            <small>
+                                Makeup • Elegance • Confidence
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SERVIÇOS
+        ====================================================== -->
+
+        <section
+            id="servicos"
+            class="services section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered animate fade-up">
+
+                    <p class="eyebrow">
+                        OS NOSSOS SERVIÇOS
+                    </p>
+
+                    <h2>
+                        Beleza pensada
+                        <span>ao detalhe.</span>
+                    </h2>
+
+                    <p>
+                        Escolha o serviço ideal para a ocasião
+                        e deixe a sua beleza nas nossas mãos.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <!-- SERVIÇO 1 -->
+                    <article class="service-card animate fade-up">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <div class="service-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Maquilhagem Social
+                        </h3>
+
+                        <p>
+                            Um look sofisticado e personalizado para
+                            festas, jantares, eventos e ocasiões especiais.
+                        </p>
+
+                        <a
+                            href="#marcacao"
+                            class="service-link"
+                        >
+                            Fazer marcação
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVIÇO 2 -->
+                    <article class="service-card animate fade-up">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <div class="service-icon">
+                            ♡
+                        </div>
+
+                        <h3>
+                            Maquilhagem de Noiva
+                        </h3>
+
+                        <p>
+                            Uma maquilhagem elegante, duradoura e
+                            cuidadosamente preparada para o seu grande dia.
+                        </p>
+
+                        <a
+                            href="#marcacao"
+                            class="service-link"
+                        >
+                            Fazer marcação
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVIÇO 3 -->
+                    <article class="service-card animate fade-up">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <div class="service-icon">
+                            ✧
+                        </div>
+
+                        <h3>
+                            Maquilhagem para Eventos
+                        </h3>
+
+                        <p>
+                            Looks marcantes e personalizados para
+                            sessões fotográficas, cerimónias e grandes eventos.
+                        </p>
+
+                        <a
+                            href="#marcacao"
+                            class="service-link"
+                        >
+                            Fazer marcação
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVIÇO 4 -->
+                    <article class="service-card animate fade-up">
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <div class="service-icon">
+                            ❀
+                        </div>
+
+                        <h3>
+                            Maquilhagem Personalizada
+                        </h3>
+
+                        <p>
+                            Uma experiência criada à sua medida,
+                            de acordo com o seu estilo, rosto e preferência.
+                        </p>
+
+                        <a
+                            href="#marcacao"
+                            class="service-link"
+                        >
+                            Fazer marcação
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALERIA
+        ====================================================== -->
+
+        <section
+            id="galeria"
+            class="gallery section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered animate fade-up">
+
+                    <p class="eyebrow">
+                        GALERIA
+                    </p>
+
+                    <h2>
+                        Beleza que fala
+                        <span>por si.</span>
+                    </h2>
+
+                    <p>
+                        Inspire-se em alguns dos nossos trabalhos
+                        e descubra o universo Delaine.Makeup.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+
+                    <div class="gallery-item gallery-item-large animate zoom-in">
+
+                        <div class="gallery-placeholder">
+                            <span>Delaine.Makeup</span>
+                            <strong>BEAUTY</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item animate zoom-in">
+
+                        <div class="gallery-placeholder">
+                            <span>MAKEUP</span>
+                            <strong>01</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item animate zoom-in">
+
+                        <div class="gallery-placeholder">
+                            <span>ELEGANCE</span>
+                            <strong>02</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item animate zoom-in">
+
+                        <div class="gallery-placeholder">
+                            <span>BEAUTY</span>
+                            <strong>03</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item animate zoom-in">
+
+                        <div class="gallery-placeholder">
+                            <span>STYLE</span>
+                            <strong>04</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MARCAÇÃO
+        ====================================================== -->
+
+        <section
+            id="marcacao"
+            class="booking section"
+        >
+
+            <div class="container">
+
+                <div class="booking-wrapper">
+
+                    <div class="booking-intro animate fade-left">
+
+                        <p class="eyebrow">
+                            MARCAÇÃO
+                        </p>
+
+                        <h2>
+                            O seu momento
+                            <span>começa aqui.</span>
+                        </h2>
+
+                        <p>
+                            Preencha o formulário e envie o seu pedido
+                            de marcação. Entraremos em contacto consigo
+                            para confirmar a disponibilidade.
+                        </p>
+
+
+                        <div class="booking-info">
+
+                            <div class="booking-info-item">
+
+                                <span class="info-icon">
+                                    ✦
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Atendimento personalizado
+                                    </strong>
+
+                                    <p>
+                                        Cada cliente recebe atenção
+                                        especial aos seus detalhes.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-info-item">
+
+                                <span class="info-icon">
+                                    ♡
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Experiência Delaine
+                                    </strong>
+
+                                    <p>
+                                        Beleza, conforto e confiança
+                                        em cada atendimento.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FORMULÁRIO -->
+                    <div class="booking-form-wrapper animate fade-right">
+
+                        <form
+                            id="bookingForm"
+                            class="booking-form"
+                            novalidate
+                        >
+
+                            <div class="form-header">
+
+                                <p class="eyebrow">
+                                    PEDIDO DE MARCAÇÃO
+                                </p>
+
+                                <h3>
+                                    Reserve o seu horário
+                                </h3>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="clientName">
+                                        Nome completo
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="clientName"
+                                        name="clientName"
+                                        placeholder="O seu nome"
+                                        autocomplete="name"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="clientPhone">
+                                        Telefone
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="clientPhone"
+                                        name="clientPhone"
+                                        placeholder="O seu telefone"
+                                        autocomplete="tel"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="clientEmail">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="clientEmail"
+                                    name="clientEmail"
+                                    placeholder="O seu e-mail"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="bookingDate">
+                                        Data
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="bookingDate"
+                                        name="bookingDate"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="bookingTime">
+                                        Hora
+                                    </label>
+
+                                    <input
+                                        type="time"
+                                        id="bookingTime"
+                                        name="bookingTime"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="service">
+                                    Serviço
+                                </label>
+
+                                <select
+                                    id="service"
+                                    name="service"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione um serviço
+                                    </option>
+
+                                    <option value="Maquilhagem Social">
+                                        Maquilhagem Social
+                                    </option>
+
+                                    <option value="Maquilhagem de Noiva">
+                                        Maquilhagem de Noiva
+                                    </option>
+
+                                    <option value="Maquilhagem para Eventos">
+                                        Maquilhagem para Eventos
+                                    </option>
+
+                                    <option value="Maquilhagem Personalizada">
+                                        Maquilhagem Personalizada
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="bookingMessage">
+                                    Mensagem
+                                </label>
+
+                                <textarea
+                                    id="bookingMessage"
+                                    name="bookingMessage"
+                                    rows="4"
+                                    placeholder="Conte-nos algum detalhe importante..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary btn-full"
+                            >
+                                Enviar pedido de marcação
+                            </button>
+
+
+                            <p
+                                id="bookingMessageStatus"
+                                class="form-status"
+                                aria-live="polite"
+                            ></p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACTOS
+        ====================================================== -->
+
+        <section
+            id="contactos"
+            class="contact section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered animate fade-up">
+
+                    <p class="eyebrow">
+                        CONTACTOS
+                    </p>
+
+                    <h2>
+                        Vamos criar algo
+                        <span>especial.</span>
+                    </h2>
+
+                    <p>
+                        Tem alguma dúvida ou pretende fazer uma marcação?
+                        Fale connosco.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-card animate fade-up">
+
+                        <div class="contact-icon">
+                            ✆
+                        </div>
+
+                        <h3>
+                            Telefone
+                        </h3>
+
+                        <p>
+                            Entre em contacto diretamente connosco.
+                        </p>
+
+                        <a
+                            href="tel:+244000000000"
+                            id="contactPhoneLink"
+                        >
+                            +244 000 000 000
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-card animate fade-up">
+
+                        <div class="contact-icon">
+                            @
+                        </div>
+
+                        <h3>
+                            E-mail
+                        </h3>
+
+                        <p>
+                            Envie-nos a sua mensagem.
+                        </p>
+
+                        <a
+                            href="mailto:contacto@delaine.makeup"
+                            id="contactEmailLink"
+                        >
+                            contacto@delaine.makeup
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-card animate fade-up">
+
+                        <div class="contact-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Instagram
+                        </h3>
+
+                        <p>
+                            Acompanhe os nossos trabalhos.
+                        </p>
+
+                        <a
+                            href="#"
+                            id="instagramLink"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            @delaine.makeup
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA FINAL
+        ====================================================== -->
+
+        <section class="final-cta">
+
+            <div class="container">
+
+                <div class="final-cta-content animate fade-up">
+
+                    <p class="eyebrow">
+                        DELAINE.MAKEUP
+                    </p>
+
+                    <h2>
+                        A sua beleza merece
+                        <span>ser celebrada.</span>
+                    </h2>
+
+                    <p>
+                        Permita-nos realçar a sua beleza e tornar
+                        o seu momento ainda mais inesquecível.
+                    </p>
+
+                    <a
+                        href="#marcacao"
+                        class="btn btn-light"
+                    >
+                        Fazer uma marcação
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <a
+                        href="#inicio"
+                        class="footer-logo"
+                    >
+                        Delaine<span>.Makeup</span>
+                    </a>
+
+                    <p>
+                        Maquilhagem profissional, elegante e
+                        personalizada para realçar a sua beleza.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <h3>
+                        Navegação
+                    </h3>
+
+                    <a href="#inicio">
+                        Início
+                    </a>
+
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+
+                    <a href="#servicos">
+                        Serviços
+                    </a>
+
+                    <a href="#galeria">
+                        Galeria
+                    </a>
+
+                    <a href="#marcacao">
+                        Marcação
+                    </a>
+
+                    <a href="#contactos">
+                        Contactos
+                    </a>
+
+                </div>
+
+
+                <div class="footer-contact">
+
+                    <h3>
+                        Contactos
+                    </h3>
+
+                    <a href="tel:+244000000000">
+                        +244 000 000 000
+                    </a>
+
+                    <a href="mailto:contacto@delaine.makeup">
+                        contacto@delaine.makeup
+                    </a>
+
+                    <span>
+                        Angola
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    Delaine.Makeup. Todos os direitos reservados.
+                </p>
+
+                <p>
+                    Beleza que realça você.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BOTÃO VOLTAR AO TOPO
+    ========================================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Voltar ao topo"
+    >
+        ↑
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         Será atualizado quando enviares o teu script.js
+    ========================================================== -->
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
