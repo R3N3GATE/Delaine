@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#7A263A">
+    <meta name="theme-color"
+          content="#7A263A">
 
     <meta name="description"
           content="Delaine.Makeup — Maquilhagem profissional, elegante e personalizada para realçar a sua beleza em momentos especiais.">
 
     <meta name="keywords"
-          content="Delaine.Makeup, makeup, maquilhagem, beleza, maquilhadora, noivas, eventos">
+          content="Delaine.Makeup, maquilhagem, makeup, beleza, maquilhadora, noivas, eventos">
 
-    <meta name="author" content="Delaine.Makeup">
+    <meta name="author"
+          content="Delaine.Makeup">
 
     <title>Delaine.Makeup | Beleza, Elegância e Confiança</title>
 
@@ -22,204 +25,128 @@
 
 <body>
 
-<!-- =========================================================
-     SITE PÚBLICO
-========================================================= -->
+    <!-- =========================================================
+         SITE PÚBLICO
+    ========================================================== -->
 
-<div id="site-publico">
+    <div id="site-publico">
 
-    <!-- ================= HEADER ================= -->
+        <!-- HEADER -->
+        <header class="site-header">
 
-    <header class="site-header">
+            <div class="container header-container">
 
-        <div class="container header-container">
+                <!-- Menu -->
+                <button
+                    id="menu-toggle"
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="main-nav">
 
-            <!-- MENU 3 BARRAS -->
-            <button
-                id="menu-toggle"
-                class="menu-toggle"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
-                <span></span>
-                <span></span>
-                <span></span>
+                </button>
 
-            </button>
+                <!-- Logo -->
+                <a
+                    href="#inicio"
+                    class="logo"
+                    aria-label="Delaine.Makeup - Início">
 
+                    Delaine<span>.Makeup</span>
 
-            <!-- LOGO -->
-            <a href="#inicio"
-               class="logo"
-               aria-label="Delaine.Makeup">
+                </a>
 
-                Delaine<span>.Makeup</span>
+                <!-- Navegação -->
+                <nav
+                    id="main-nav"
+                    class="main-nav"
+                    aria-label="Menu principal">
 
-            </a>
+                    <ul>
 
+                        <li>
+                            <a href="#inicio">Início</a>
+                        </li>
 
-            <!-- MENU -->
-            <nav
-                id="main-nav"
-                class="main-nav"
-                aria-label="Menu principal">
+                        <li>
+                            <a href="#sobre">Sobre</a>
+                        </li>
 
-                <ul>
+                        <li>
+                            <a href="#servicos">Serviços</a>
+                        </li>
 
-                    <li>
-                        <a href="#inicio">Início</a>
-                    </li>
+                        <li>
+                            <a href="#galeria">Galeria</a>
+                        </li>
 
-                    <li>
-                        <a href="#sobre">Sobre</a>
-                    </li>
+                        <li>
+                            <a href="#marcacao">Marcação</a>
+                        </li>
 
-                    <li>
-                        <a href="#servicos">Serviços</a>
-                    </li>
+                        <li>
+                            <a href="#contactos">Contactos</a>
+                        </li>
 
-                    <li>
-                        <a href="#galeria">Galeria</a>
-                    </li>
+                    </ul>
 
-                    <li>
-                        <a href="#marcacao">Marcação</a>
-                    </li>
-
-                    <li>
-                        <a href="#contactos">Contactos</a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <!-- ================= CONTEÚDO ================= -->
-
-    <main>
-
-        <!-- ================= HERO ================= -->
-
-        <section id="inicio" class="hero">
-
-            <div class="container hero-content">
-
-                <span class="eyebrow">
-                    DELAINE.MAKEUP
-                </span>
-
-                <h1>
-                    A sua beleza,
-                    <span>elevada a outro nível.</span>
-                </h1>
-
-                <p>
-                    Maquilhagem profissional, elegante e
-                    personalizada para realçar a sua beleza,
-                    valorizar a sua personalidade e tornar
-                    cada momento ainda mais especial.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#marcacao"
-                        class="btn btn-primary">
-
-                        Fazer marcação
-
-                    </a>
-
-                    <a
-                        href="#servicos"
-                        class="btn btn-secondary">
-
-                        Ver serviços
-
-                    </a>
-
-                </div>
+                </nav>
 
             </div>
 
-        </section>
+        </header>
 
 
-        <!-- ================= SOBRE ================= -->
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
 
-        <section id="sobre" class="about">
+            <!-- =================================================
+                 HERO
+            ================================================== -->
 
-            <div class="container">
+            <section
+                id="inicio"
+                class="hero"
+                aria-labelledby="hero-title">
 
-                <div class="section-header">
+                <div class="container hero-content">
 
                     <span class="eyebrow">
-                        SOBRE NÓS
+                        DELAINE.MAKEUP
                     </span>
 
-                    <h2>
-                        Beleza criada para si
-                    </h2>
+                    <h1 id="hero-title">
+                        A sua beleza,
+                        <span>elevada a outro nível.</span>
+                    </h1>
 
                     <p>
-                        Cada rosto tem uma beleza única.
-                        O nosso trabalho é valorizá-la.
+                        Maquilhagem profissional, elegante e
+                        personalizada para realçar a sua beleza,
+                        valorizar a sua personalidade e tornar
+                        cada momento ainda mais especial.
                     </p>
 
-                </div>
-
-
-                <div class="about-content">
-
-                    <div class="about-image">
-
-                        <img
-                            src="images/about.jpg"
-                            alt="Profissional Delaine.Makeup">
-
-                    </div>
-
-
-                    <div class="about-text">
-
-                        <h3>
-                            Mais do que maquilhagem,
-                            uma experiência.
-                        </h3>
-
-                        <p>
-                            Na Delaine.Makeup, acreditamos que
-                            a maquilhagem deve realçar a sua
-                            identidade, respeitando o seu estilo,
-                            personalidade e ocasião.
-                        </p>
-
-                        <p>
-                            Trabalhamos com atenção aos detalhes
-                            e técnicas profissionais para criar
-                            resultados elegantes, sofisticados
-                            e personalizados.
-                        </p>
-
-                        <p>
-                            Seja para um casamento, festa,
-                            sessão fotográfica, evento especial
-                            ou simplesmente para se sentir ainda
-                            mais confiante, estamos prontas para
-                            cuidar de cada detalhe.
-                        </p>
+                    <div class="hero-buttons">
 
                         <a
                             href="#marcacao"
                             class="btn btn-primary">
 
-                            Agendar agora
+                            Fazer marcação
+
+                        </a>
+
+                        <a
+                            href="#servicos"
+                            class="btn btn-secondary">
+
+                            Ver serviços
 
                         </a>
 
@@ -227,509 +154,1133 @@
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- ================= SERVIÇOS ================= -->
+            <!-- =================================================
+                 SOBRE
+            ================================================== -->
 
-        <section id="servicos" class="services">
+            <section
+                id="sobre"
+                class="about"
+                aria-labelledby="about-title">
 
-            <div class="container">
+                <div class="container">
 
-                <div class="section-header">
+                    <div class="section-header">
 
-                    <span class="eyebrow">
-                        SERVIÇOS
-                    </span>
+                        <span class="eyebrow">
+                            SOBRE NÓS
+                        </span>
 
-                    <h2>
-                        Escolha a experiência ideal
-                    </h2>
+                        <h2 id="about-title">
+                            Beleza criada para si
+                        </h2>
 
-                    <p>
-                        Serviços pensados para diferentes
-                        ocasiões, estilos e necessidades.
-                    </p>
+                        <p>
+                            Cada rosto tem uma beleza única.
+                            O nosso trabalho é valorizá-la.
+                        </p>
 
-                </div>
+                    </div>
 
+                    <div class="about-content">
 
-                <div
-                    id="services-container"
-                    class="services-grid">
-
-
-                    <!-- SERVIÇO 1 -->
-
-                    <article
-                        class="service-card"
-                        data-service-id="service-1">
-
-                        <div class="service-card-image">
+                        <div class="about-image">
 
                             <img
-                                src="images/service-1.jpg"
-                                alt="Maquilhagem social">
+                                src="images/about.jpg"
+                                alt="Profissional Delaine.Makeup"
+                                loading="lazy">
 
                         </div>
 
-
-                        <div class="service-card-content">
-
-                            <span class="service-category">
-                                MAQUILHAGEM
-                            </span>
+                        <div class="about-text">
 
                             <h3>
-                                Makeup Social
+                                Mais do que maquilhagem,
+                                uma experiência.
                             </h3>
 
                             <p>
-                                Uma maquilhagem elegante e
-                                personalizada para festas,
-                                eventos e ocasiões especiais.
+                                Na Delaine.Makeup, acreditamos
+                                que a maquilhagem deve realçar
+                                a identidade de cada cliente,
+                                respeitando o seu estilo,
+                                personalidade e ocasião.
                             </p>
-
-                            <div class="service-details">
-
-                                <span class="service-price">
-                                    25.000 Kz
-                                </span>
-
-                                <span>
-                                    ⏱ 1h30
-                                </span>
-
-                            </div>
-
-                            <p class="service-displacement">
-                                📍 Atendimento no local
-                            </p>
-
-                            <button
-                                type="button"
-                                class="btn btn-primary service-book-btn"
-                                data-service="service-1">
-
-                                Escolher serviço
-
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVIÇO 2 -->
-
-                    <article
-                        class="service-card"
-                        data-service-id="service-2">
-
-                        <div class="service-card-image">
-
-                            <img
-                                src="images/service-2.jpg"
-                                alt="Maquilhagem para noivas">
-
-                        </div>
-
-
-                        <div class="service-card-content">
-
-                            <span class="service-category">
-                                NOIVAS
-                            </span>
-
-                            <h3>
-                                Makeup Bridal
-                            </h3>
 
                             <p>
-                                Uma produção sofisticada e
-                                personalizada para tornar
-                                o seu grande dia inesquecível.
+                                Trabalhamos com técnicas
+                                profissionais, atenção aos
+                                detalhes e uma abordagem
+                                personalizada para criar
+                                resultados elegantes,
+                                sofisticados e harmoniosos.
                             </p>
-
-                            <div class="service-details">
-
-                                <span class="service-price">
-                                    45.000 Kz
-                                </span>
-
-                                <span>
-                                    ⏱ 2h
-                                </span>
-
-                            </div>
-
-                            <p class="service-displacement">
-                                📍 Atendimento no local
-                            </p>
-
-                            <button
-                                type="button"
-                                class="btn btn-primary service-book-btn"
-                                data-service="service-2">
-
-                                Escolher serviço
-
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVIÇO 3 -->
-
-                    <article
-                        class="service-card"
-                        data-service-id="service-3">
-
-                        <div class="service-card-image">
-
-                            <img
-                                src="images/service-3.jpg"
-                                alt="Maquilhagem premium">
-
-                        </div>
-
-
-                        <div class="service-card-content">
-
-                            <span class="service-category">
-                                PREMIUM
-                            </span>
-
-                            <h3>
-                                Makeup Premium
-                            </h3>
 
                             <p>
-                                Uma experiência completa para
-                                quem procura um acabamento
-                                sofisticado, elegante e duradouro.
+                                Seja para um casamento,
+                                festa, sessão fotográfica,
+                                evento especial ou simplesmente
+                                para se sentir ainda mais
+                                confiante, cada detalhe é
+                                pensado para si.
                             </p>
 
-                            <div class="service-details">
+                            <a
+                                href="#marcacao"
+                                class="btn btn-primary">
 
-                                <span class="service-price">
-                                    60.000 Kz
-                                </span>
+                                Agendar agora
 
-                                <span>
-                                    ⏱ 2h30
-                                </span>
-
-                            </div>
-
-                            <p class="service-displacement">
-                                📍 Atendimento no local
-                            </p>
-
-                            <button
-                                type="button"
-                                class="btn btn-primary service-book-btn"
-                                data-service="service-3">
-
-                                Escolher serviço
-
-                            </button>
+                            </a>
 
                         </div>
 
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= GALERIA ================= -->
-
-        <section id="galeria" class="gallery">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="eyebrow">
-                        GALERIA
-                    </span>
-
-                    <h2>
-                        Alguns dos nossos trabalhos
-                    </h2>
-
-                    <p>
-                        Inspire-se e descubra diferentes
-                        estilos de maquilhagem.
-                    </p>
-
-                </div>
-
-
-                <div
-                    id="gallery-container"
-                    class="gallery-grid">
-
-
-                    <div class="gallery-item">
-                        <img
-                            src="images/gallery-1.jpg"
-                            alt="Trabalho de maquilhagem 1">
-                    </div>
-
-
-                    <div class="gallery-item">
-                        <img
-                            src="images/gallery-2.jpg"
-                            alt="Trabalho de maquilhagem 2">
-                    </div>
-
-
-                    <div class="gallery-item">
-                        <img
-                            src="images/gallery-3.jpg"
-                            alt="Trabalho de maquilhagem 3">
-                    </div>
-
-
-                    <div class="gallery-item">
-                        <img
-                            src="images/gallery-4.jpg"
-                            alt="Trabalho de maquilhagem 4">
-                    </div>
-
-
-                    <div class="gallery-item">
-                        <img
-                            src="images/gallery-5.jpg"
-                            alt="Trabalho de maquilhagem 5">
-                    </div>
-
-
-                    <div class="gallery-item">
-                        <img
-                            src="images/gallery-6.jpg"
-                            alt="Trabalho de maquilhagem 6">
                     </div>
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- ================= MARCAÇÃO ================= -->
+            <!-- =================================================
+                 SERVIÇOS
+            ================================================== -->
 
-        <section id="marcacao" class="booking">
+            <section
+                id="servicos"
+                class="services"
+                aria-labelledby="services-title">
 
-            <div class="container">
+                <div class="container">
 
-                <div class="section-header">
+                    <div class="section-header">
 
-                    <span class="eyebrow">
-                        MARCAÇÃO
-                    </span>
+                        <span class="eyebrow">
+                            SERVIÇOS
+                        </span>
 
-                    <h2>
-                        Reserve o seu horário
-                    </h2>
+                        <h2 id="services-title">
+                            Escolha a experiência ideal
+                        </h2>
 
-                    <p>
-                        Escolha o serviço, a data e o horário
-                        que deseja.
-                    </p>
+                        <p>
+                            Serviços pensados para diferentes
+                            ocasiões, estilos e necessidades.
+                        </p>
 
-                </div>
+                    </div>
 
+                    <!--
+                        Este container pode ser preenchido
+                        futuramente pelo JavaScript/backend.
+                    -->
 
-                <div class="booking-wrapper">
+                    <div
+                        id="services-container"
+                        class="services-grid">
 
-                    <form
-                        id="booking-form"
-                        class="booking-form"
-                        novalidate>
+                        <!-- SERVIÇO 1 -->
 
+                        <article
+                            class="service-card"
+                            data-service-id="service-1">
 
-                        <!-- SERVIÇO -->
+                            <div class="service-card-image">
 
-                        <div class="form-group">
+                                <img
+                                    src="images/service-1.jpg"
+                                    alt="Makeup Social"
+                                    loading="lazy">
 
-                            <label for="service">
-                                Serviço
-                            </label>
+                            </div>
 
-                            <select
-                                id="service"
-                                name="service"
-                                required>
+                            <div class="service-card-content">
 
-                                <option value="">
-                                    Seleccione um serviço
-                                </option>
+                                <span class="service-category">
+                                    MAQUILHAGEM
+                                </span>
 
-                                <option value="service-1">
+                                <h3>
                                     Makeup Social
-                                </option>
+                                </h3>
 
-                                <option value="service-2">
+                                <p>
+                                    Uma maquilhagem elegante
+                                    e personalizada para
+                                    festas, eventos e ocasiões
+                                    especiais.
+                                </p>
+
+                                <div class="service-details">
+
+                                    <span class="service-price">
+                                        25.000 Kz
+                                    </span>
+
+                                    <span>
+                                        ⏱ 1h30
+                                    </span>
+
+                                </div>
+
+                                <p class="service-displacement">
+                                    📍 Atendimento no local
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary service-book-btn"
+                                    data-service="service-1">
+
+                                    Escolher serviço
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SERVIÇO 2 -->
+
+                        <article
+                            class="service-card"
+                            data-service-id="service-2">
+
+                            <div class="service-card-image">
+
+                                <img
+                                    src="images/service-2.jpg"
+                                    alt="Makeup Bridal"
+                                    loading="lazy">
+
+                            </div>
+
+                            <div class="service-card-content">
+
+                                <span class="service-category">
+                                    NOIVAS
+                                </span>
+
+                                <h3>
                                     Makeup Bridal
-                                </option>
+                                </h3>
 
-                                <option value="service-3">
+                                <p>
+                                    Uma produção sofisticada
+                                    e personalizada para
+                                    tornar o seu grande dia
+                                    ainda mais especial.
+                                </p>
+
+                                <div class="service-details">
+
+                                    <span class="service-price">
+                                        45.000 Kz
+                                    </span>
+
+                                    <span>
+                                        ⏱ 2h
+                                    </span>
+
+                                </div>
+
+                                <p class="service-displacement">
+                                    📍 Atendimento no local
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary service-book-btn"
+                                    data-service="service-2">
+
+                                    Escolher serviço
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- SERVIÇO 3 -->
+
+                        <article
+                            class="service-card"
+                            data-service-id="service-3">
+
+                            <div class="service-card-image">
+
+                                <img
+                                    src="images/service-3.jpg"
+                                    alt="Makeup Premium"
+                                    loading="lazy">
+
+                            </div>
+
+                            <div class="service-card-content">
+
+                                <span class="service-category">
+                                    PREMIUM
+                                </span>
+
+                                <h3>
                                     Makeup Premium
-                                </option>
+                                </h3>
 
-                            </select>
+                                <p>
+                                    Uma experiência completa
+                                    para quem procura um
+                                    acabamento sofisticado,
+                                    elegante e duradouro.
+                                </p>
 
+                                <div class="service-details">
+
+                                    <span class="service-price">
+                                        60.000 Kz
+                                    </span>
+
+                                    <span>
+                                        ⏱ 2h30
+                                    </span>
+
+                                </div>
+
+                                <p class="service-displacement">
+                                    📍 Atendimento no local
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary service-book-btn"
+                                    data-service="service-3">
+
+                                    Escolher serviço
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 GALERIA
+            ================================================== -->
+
+            <section
+                id="galeria"
+                class="gallery"
+                aria-labelledby="gallery-title">
+
+                <div class="container">
+
+                    <div class="section-header">
+
+                        <span class="eyebrow">
+                            GALERIA
+                        </span>
+
+                        <h2 id="gallery-title">
+                            Alguns dos nossos trabalhos
+                        </h2>
+
+                        <p>
+                            Inspire-se e descubra diferentes
+                            estilos de maquilhagem.
+                        </p>
+
+                    </div>
+
+                    <div
+                        id="gallery-container"
+                        class="gallery-grid">
+
+                        <div class="gallery-item">
+                            <img
+                                src="images/gallery-1.jpg"
+                                alt="Trabalho de maquilhagem 1"
+                                loading="lazy">
                         </div>
 
-
-                        <!-- DATA -->
-
-                        <div class="form-group">
-
-                            <label for="date">
-                                Data
-                            </label>
-
-                            <input
-                                type="date"
-                                id="date"
-                                name="date"
-                                required>
-
+                        <div class="gallery-item">
+                            <img
+                                src="images/gallery-2.jpg"
+                                alt="Trabalho de maquilhagem 2"
+                                loading="lazy">
                         </div>
 
-
-                        <!-- HORA -->
-
-                        <div class="form-group">
-
-                            <label for="time">
-                                Horário
-                            </label>
-
-                            <select
-                                id="time"
-                                name="time"
-                                required>
-
-                                <option value="">
-                                    Seleccione um horário
-                                </option>
-
-                                <option value="08:00">08:00</option>
-                                <option value="09:00">09:00</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="12:00">12:00</option>
-                                <option value="13:00">13:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
-
-                            </select>
-
+                        <div class="gallery-item">
+                            <img
+                                src="images/gallery-3.jpg"
+                                alt="Trabalho de maquilhagem 3"
+                                loading="lazy">
                         </div>
 
-
-                        <!-- NOME -->
-
-                        <div class="form-group">
-
-                            <label for="name">
-                                Nome completo
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Digite o seu nome"
-                                autocomplete="name"
-                                required>
-
+                        <div class="gallery-item">
+                            <img
+                                src="images/gallery-4.jpg"
+                                alt="Trabalho de maquilhagem 4"
+                                loading="lazy">
                         </div>
 
-
-                        <!-- WHATSAPP -->
-
-                        <div class="form-group">
-
-                            <label for="phone">
-                                Telefone / WhatsApp
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                placeholder="+244 9XX XXX XXX"
-                                autocomplete="tel"
-                                required>
-
+                        <div class="gallery-item">
+                            <img
+                                src="images/gallery-5.jpg"
+                                alt="Trabalho de maquilhagem 5"
+                                loading="lazy">
                         </div>
 
-
-                        <!-- EMAIL -->
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email
-                                <span>(opcional)</span>
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="seuemail@exemplo.com"
-                                autocomplete="email">
-
+                        <div class="gallery-item">
+                            <img
+                                src="images/gallery-6.jpg"
+                                alt="Trabalho de maquilhagem 6"
+                                loading="lazy">
                         </div>
 
+                    </div>
 
-                        <!-- OBSERVAÇÕES -->
+                </div>
 
-                        <div class="form-group">
-
-                            <label for="observations">
-                                Observações
-                            </label>
-
-                            <textarea
-                                id="observations"
-                                name="observations"
-                                rows="5"
-                                placeholder="Alguma informação adicional?"></textarea>
-
-                        </div>
+            </section>
 
 
-                        <!-- TERMOS -->
+            <!-- =================================================
+                 MARCAÇÃO
+            ================================================== -->
 
-                        <div class="form-group checkbox-group">
+            <section
+                id="marcacao"
+                class="booking"
+                aria-labelledby="booking-title">
 
-                            <label>
+                <div class="container">
 
-                                <input
-                                    type="checkbox"
-                                    id="terms"
-                                    name="terms"
+                    <div class="section-header">
+
+                        <span class="eyebrow">
+                            MARCAÇÃO
+                        </span>
+
+                        <h2 id="booking-title">
+                            Reserve o seu horário
+                        </h2>
+
+                        <p>
+                            Escolha o serviço, a data e o
+                            horário que deseja.
+                        </p>
+
+                    </div>
+
+                    <div class="booking-wrapper">
+
+                        <form
+                            id="booking-form"
+                            class="booking-form"
+                            novalidate>
+
+                            <!-- Serviço -->
+
+                            <div class="form-group">
+
+                                <label for="service">
+                                    Serviço
+                                </label>
+
+                                <select
+                                    id="service"
+                                    name="service"
                                     required>
 
-                                <span>
-                                    Confirmo que as informações
-                                    fornecidas estão correct
+                                    <option value="">
+                                        Seleccione um serviço
+                                    </option>
+
+                                    <option value="service-1">
+                                        Makeup Social
+                                    </option>
+
+                                    <option value="service-2">
+                                        Makeup Bridal
+                                    </option>
+
+                                    <option value="service-3">
+                                        Makeup Premium
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Data -->
+
+                            <div class="form-group">
+
+                                <label for="date">
+                                    Data
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="date"
+                                    name="date"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Horário -->
+
+                            <div class="form-group">
+
+                                <label for="time">
+                                    Horário
+                                </label>
+
+                                <select
+                                    id="time"
+                                    name="time"
+                                    required>
+
+                                    <option value="">
+                                        Seleccione um horário
+                                    </option>
+
+                                    <option value="08:00">
+                                        08:00
+                                    </option>
+
+                                    <option value="09:00">
+                                        09:00
+                                    </option>
+
+                                    <option value="10:00">
+                                        10:00
+                                    </option>
+
+                                    <option value="11:00">
+                                        11:00
+                                    </option>
+
+                                    <option value="12:00">
+                                        12:00
+                                    </option>
+
+                                    <option value="13:00">
+                                        13:00
+                                    </option>
+
+                                    <option value="14:00">
+                                        14:00
+                                    </option>
+
+                                    <option value="15:00">
+                                        15:00
+                                    </option>
+
+                                    <option value="16:00">
+                                        16:00
+                                    </option>
+
+                                    <option value="17:00">
+                                        17:00
+                                    </option>
+
+                                    <option value="18:00">
+                                        18:00
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Nome -->
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Nome completo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Digite o seu nome"
+                                    autocomplete="name"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Telefone -->
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Telefone / WhatsApp
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+244 9XX XXX XXX"
+                                    autocomplete="tel"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Email -->
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email
+                                    <span>(opcional)</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="seuemail@exemplo.com"
+                                    autocomplete="email">
+
+                            </div>
+
+
+                            <!-- Observações -->
+
+                            <div class="form-group">
+
+                                <label for="observations">
+                                    Observações
+                                </label>
+
+                                <textarea
+                                    id="observations"
+                                    name="observations"
+                                    rows="5"
+                                    placeholder="Alguma informação adicional?"></textarea>
+
+                            </div>
+
+
+                            <!-- Confirmação -->
+
+                            <div class="form-group checkbox-group">
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        id="terms"
+                                        name="terms"
+                                        required>
+
+                                    <span>
+                                        Confirmo que as informações
+                                        fornecidas estão correctas.
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Envio -->
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+
+                                Confirmar marcação
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CONTACTOS
+            ================================================== -->
+
+            <section
+                id="contactos"
+                class="contact"
+                aria-labelledby="contact-title">
+
+                <div class="container">
+
+                    <div class="section-header">
+
+                        <span class="eyebrow">
+                            CONTACTOS
+                        </span>
+
+                        <h2 id="contact-title">
+                            Fale connosco
+                        </h2>
+
+                        <p>
+                            Estamos disponíveis para esclarecer
+                            dúvidas e ajudar na sua marcação.
+                        </p>
+
+                    </div>
+
+                    <div class="contact-grid">
+
+                        <!-- WhatsApp -->
+
+                        <article class="contact-card">
+
+                            <span
+                                class="contact-icon"
+                                aria-hidden="true">
+                                💬
+                            </span>
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+                            <p>
+                                Fale directamente connosco.
+                            </p>
+
+                            <a
+                                id="contact-whatsapp"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                Enviar mensagem
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Email -->
+
+                        <article class="contact-card">
+
+                            <span
+                                class="contact-icon"
+                                aria-hidden="true">
+                                ✉
+                            </span>
+
+                            <h3>
+                                Email
+                            </h3>
+
+                            <p>
+                                Envie-nos a sua mensagem.
+                            </p>
+
+                            <a
+                                id="contact-email"
+                                href="#">
+
+                                Enviar email
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Localização -->
+
+                        <article class="contact-card">
+
+                            <span
+                                class="contact-icon"
+                                aria-hidden="true">
+                                📍
+                            </span>
+
+                            <h3>
+                                Localização
+                            </h3>
+
+                            <p id="contact-location">
+                                Angola
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="site-footer">
+
+            <div class="container footer-container">
+
+                <div class="footer-logo">
+                    Delaine<span>.Makeup</span>
+                </div>
+
+                <p class="footer-copy">
+                    ©
+                    <span id="current-year"></span>
+                    Delaine.Makeup.
+                    Todos os direitos reservados.
+                </p>
+
+            </div>
+
+        </footer>
+
+
+        <!-- VOLTAR AO TOPO -->
+
+        <button
+            id="back-to-top"
+            class="back-to-top"
+            type="button"
+            aria-label="Voltar ao topo">
+
+            ↑
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================================================
+         ÁREA ADMINISTRATIVA
+    ========================================================== -->
+
+    <div
+        id="admin-area"
+        class="hidden">
+
+        <!-- LOGIN ADMINISTRATIVO -->
+
+        <section
+            id="admin-login"
+            class="admin-login"
+            aria-labelledby="admin-login-title">
+
+            <div class="login-box">
+
+                <div class="login-logo">
+                    Delaine<span>.Makeup</span>
+                </div>
+
+                <h1 id="admin-login-title">
+                    Área administrativa
+                </h1>
+
+                <p>
+                    Aceda ao painel de gestão.
+                </p>
+
+                <form
+                    id="admin-login-form"
+                    class="admin-form">
+
+                    <div class="form-group">
+
+                        <label for="admin-email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="admin-email"
+                            name="admin-email"
+                            autocomplete="username"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="admin-password">
+                            Palavra-passe
+                        </label>
+
+                        <input
+                            type="password"
+                            id="admin-password"
+                            name="admin-password"
+                            autocomplete="current-password"
+                            required>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Entrar
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section
+            id="admin-dashboard"
+            class="admin-dashboard hidden">
+
+            <!-- SIDEBAR -->
+
+            <aside class="admin-sidebar">
+
+                <div class="admin-logo">
+                    Delaine<span>.Makeup</span>
+                </div>
+
+                <nav
+                    class="admin-menu"
+                    aria-label="Menu administrativo">
+
+                    <a
+                        href="#admin-home"
+                        class="active">
+
+                        Dashboard
+
+                    </a>
+
+                    <a href="#admin-bookings">
+                        Marcações
+                    </a>
+
+                    <a href="#admin-services">
+                        Serviços
+                    </a>
+
+                    <a href="#admin-gallery">
+                        Galeria
+                    </a>
+
+                    <a href="#admin-schedule">
+                        Horários
+                    </a>
+
+                    <a href="#admin-notifications">
+                        Notificações
+                    </a>
+
+                    <a href="#admin-settings">
+                        Definições
+                    </a>
+
+                    <button
+                        id="admin-logout"
+                        type="button">
+
+                        Sair
+
+                    </button>
+
+                </nav>
+
+            </aside>
+
+
+            <!-- CONTEÚDO ADMINISTRATIVO -->
+
+            <main class="admin-main">
+
+                <!-- TOPBAR -->
+
+                <div class="admin-topbar">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PAINEL ADMINISTRATIVO
+                        </span>
+
+                        <h1>
+                            Gestão Delaine.Makeup
+                        </h1>
+
+                    </div>
+
+                    <button
+                        id="view-public-site"
+                        class="btn btn-secondary"
+                        type="button">
+
+                        Ver site
+
+                    </button>
+
+                </div>
+
+
+                <!-- =============================================
+                     DASHBOARD / ESTATÍSTICAS
+                ============================================== -->
+
+                <section
+                    id="admin-home"
+                    class="admin-section"
+                    aria-labelledby="admin-home-title">
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+
+                            <span>
+                                Marcações hoje
+                            </span>
+
+                            <strong id="stat-today">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <span>
+                                Pendentes
+                            </span>
+
+                            <strong id="stat-pending">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <span>
+                                Confirmadas
+                            </span>
+
+                            <strong id="stat-confirmed">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <span>
+                                Total de marcações
+                            </span>
+
+                            <strong id="stat-total">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     GESTÃO DE MARCAÇÕES
+                ============================================== -->
+
+                <section
+                    id="admin-bookings"
+                    class="admin-section">
+
+                    <div class="admin-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                AGENDA
+                            </span>
+
+                            <h2>
+                                Marcações
+                            </h2>
+
+                        </div>
+
+                        <button
+                            id="refresh-bookings"
+                            class="btn btn-secondary"
+                            type="button">
+
+                            Actualizar
+
+                        </button>
+
+                    </div>
+
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Cliente
+                                    </th>
+
+                                    <th>
+                                        Serviço
+                                    </th>
+
+                                    <th>
+                                        Data
+                                    </th>
+
+                                    <th>
+                                        Hora
+                                    </th>
+
+                                    <th>
+                                        Estado
+                                    </th>
+
+                                    <th>
+                                        Acções
+                                    </th>
+
+                               
