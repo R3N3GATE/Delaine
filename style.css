@@ -208,7 +208,7 @@ ol {
     flex-direction: column;
     gap: 5px;
 
-    box-shadow: none;
+    box-shadow: 0 12px 25px rgba(90, 38, 53, 0.25);
 
     transition:
         transform var(--transition),
