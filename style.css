@@ -2202,3 +2202,8 @@ ol {
 .site-header {
     border-bottom: none !important;
 }
+
+/* TESTE DEFINITIVO */
+* {
+    box-shadow: none !important;
+}
