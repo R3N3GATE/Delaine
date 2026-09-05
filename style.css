@@ -2190,3 +2190,15 @@ ol {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* TESTE — eliminar qualquer sombra junto ao header */
+.site-header,
+.site-header *,
+.site-header::before,
+.site-header::after {
+    box-shadow: none !important;
+}
+
+.site-header {
+    border-bottom: none !important;
+}
