@@ -1,17 +1,17 @@
 /* =========================================================
    DELAINE.MAKEUP
    SCRIPT.JS
-   Sistema de navegação, clientes, marcações e administração
+   Navegação, animações, marcações e administração
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       1. MENU MOBILE
+       1. MENU
     ===================================================== */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const menuToggle = document.querySelector("#menuToggle");
+    const navMenu = document.querySelector("#navMenu");
 
     if (menuToggle && navMenu) {
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const isOpen = navMenu.classList.toggle("active");
 
-            menuToggle.classList.toggle("active");
+            menuToggle.classList.toggle("active", isOpen);
 
             menuToggle.setAttribute(
                 "aria-expanded",
@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 "aria-label",
                 isOpen ? "Fechar menu" : "Abrir menu"
             );
+
         });
+
 
         navMenu.querySelectorAll("a").forEach(link => {
 
@@ -48,9 +50,43 @@ document.addEventListener("DOMContentLoaded", () => {
                     "aria-label",
                     "Abrir menu"
                 );
+
             });
 
         });
+
+
+        document.addEventListener("click", event => {
+
+            const clickedInsideMenu =
+                navMenu.contains(event.target);
+
+            const clickedToggle =
+                menuToggle.contains(event.target);
+
+            if (
+                !clickedInsideMenu &&
+                !clickedToggle &&
+                navMenu.classList.contains("active")
+            ) {
+
+                navMenu.classList.remove("active");
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Abrir menu"
+                );
+
+            }
+
+        });
+
     }
 
 
@@ -58,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
        2. HEADER AO FAZER SCROLL
     ===================================================== */
 
-    const header = document.querySelector(".site-header");
+    const header = document.querySelector("#siteHeader");
 
     if (header) {
 
@@ -72,9 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         };
 
-        window.addEventListener("scroll", updateHeader);
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
 
         updateHeader();
+
     }
 
 
@@ -86,13 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.addEventListener("click", event => {
 
-            const targetId = link.getAttribute("href");
+            const targetId =
+                link.getAttribute("href");
 
-            if (!targetId || targetId === "#") {
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
                 return;
             }
 
-            const target = document.querySelector(targetId);
+            const target =
+                document.querySelector(targetId);
 
             if (target) {
 
@@ -111,13 +157,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       4. ANO AUTOMÁTICO DO FOOTER
+       4. ANO AUTOMÁTICO
     ===================================================== */
 
-    const currentYear = document.querySelector("#current-year");
+    const currentYear =
+        document.querySelector("#currentYear");
 
     if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
     }
 
 
@@ -125,28 +175,47 @@ document.addEventListener("DOMContentLoaded", () => {
        5. BOTÃO VOLTAR AO TOPO
     ===================================================== */
 
-    const backToTop = document.querySelector(".back-to-top");
+    const backToTop =
+        document.querySelector("#backToTop");
 
     if (backToTop) {
 
-        window.addEventListener("scroll", () => {
+        const updateBackToTop = () => {
 
             if (window.scrollY > 500) {
+
                 backToTop.classList.add("show");
+
             } else {
+
                 backToTop.classList.remove("show");
+
             }
 
-        });
+        };
 
-        backToTop.addEventListener("click", () => {
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+        window.addEventListener(
+            "scroll",
+            updateBackToTop,
+            { passive: true }
+        );
 
-        });
+
+        updateBackToTop();
+
+
+        backToTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
 
     }
 
@@ -155,131 +224,227 @@ document.addEventListener("DOMContentLoaded", () => {
        6. ANIMAÇÕES
     ===================================================== */
 
-    const animatedElements = document.querySelectorAll(
-        ".fade-up, .reveal, .product-card, .feature-card, .service-card, .gallery-item"
-    );
+    const animatedElements =
+        document.querySelectorAll(
+            ".animate, .fade-up, .fade-left, .fade-right, .zoom-in, .reveal, .service-card, .gallery-item"
+        );
+
 
     if ("IntersectionObserver" in window) {
 
-        const observer = new IntersectionObserver(
-            entries => {
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
-                entries.forEach(entry => {
+                    entries.forEach(entry => {
 
-                    if (entry.isIntersecting) {
+                        if (entry.isIntersecting) {
 
-                        entry.target.classList.add("visible");
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
-                        observer.unobserve(entry.target);
+                            observer.unobserve(
+                                entry.target
+                            );
 
-                    }
+                        }
 
-                });
+                    });
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
 
         animatedElements.forEach(element => {
+
             observer.observe(element);
+
         });
 
     } else {
 
         animatedElements.forEach(element => {
+
             element.classList.add("visible");
+
         });
 
     }
 
 
     /* =====================================================
-       7. SISTEMA DE MARCAÇÕES
+       7. FORMULÁRIO DE MARCAÇÃO
     ===================================================== */
 
     const bookingForm =
-        document.querySelector("#booking-form");
+        document.querySelector("#bookingForm");
+
 
     if (bookingForm) {
 
-        bookingForm.addEventListener("submit", event => {
-
-            event.preventDefault();
-
-            const name =
-                document.querySelector("#name")?.value.trim();
-
-            const phone =
-                document.querySelector("#phone")?.value.trim();
-
-            const service =
-                document.querySelector("#service")?.value;
-
-            const date =
-                document.querySelector("#date")?.value;
-
-            const message =
-                document.querySelector("#message")?.value.trim();
+        const dateInput =
+            document.querySelector("#bookingDate");
 
 
-            if (!name || !phone || !service || !date) {
+        /* Data mínima = hoje */
 
-                showMessage(
-                    "Preencha todos os campos obrigatórios.",
-                    "error"
+        if (dateInput) {
+
+            const today =
+                new Date();
+
+            const year =
+                today.getFullYear();
+
+            const month =
+                String(
+                    today.getMonth() + 1
+                ).padStart(2, "0");
+
+            const day =
+                String(
+                    today.getDate()
+                ).padStart(2, "0");
+
+
+            dateInput.min =
+                `${year}-${month}-${day}`;
+
+        }
+
+
+        bookingForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .querySelector("#clientName")
+                        ?.value
+                        .trim();
+
+
+                const phone =
+                    document
+                        .querySelector("#clientPhone")
+                        ?.value
+                        .trim();
+
+
+                const email =
+                    document
+                        .querySelector("#clientEmail")
+                        ?.value
+                        .trim();
+
+
+                const date =
+                    document
+                        .querySelector("#bookingDate")
+                        ?.value;
+
+
+                const time =
+                    document
+                        .querySelector("#bookingTime")
+                        ?.value;
+
+
+                const service =
+                    document
+                        .querySelector("#service")
+                        ?.value;
+
+
+                const message =
+                    document
+                        .querySelector("#bookingMessage")
+                        ?.value
+                        .trim();
+
+
+                if (
+                    !name ||
+                    !phone ||
+                    !email ||
+                    !date ||
+                    !time ||
+                    !service
+                ) {
+
+                    showBookingStatus(
+                        "Preencha todos os campos obrigatórios.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                const booking = {
+
+                    id: generateId(),
+
+                    name: name,
+
+                    phone: phone,
+
+                    email: email,
+
+                    date: date,
+
+                    time: time,
+
+                    service: service,
+
+                    message: message,
+
+                    status: "Pendente",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                const bookings =
+                    getBookings();
+
+
+                bookings.push(
+                    booking
                 );
 
-                return;
+
+                saveBookings(
+                    bookings
+                );
+
+
+                bookingForm.reset();
+
+
+                showBookingStatus(
+                    "Pedido de marcação enviado com sucesso!",
+                    "success"
+                );
+
+
+                /*
+                 * Futuramente podemos ligar este formulário
+                 * diretamente ao WhatsApp, e-mail ou servidor.
+                 */
+
             }
-
-
-            const booking = {
-
-                id: generateId(),
-
-                name: name,
-
-                phone: phone,
-
-                service: service,
-
-                date: date,
-
-                message: message,
-
-                status: "Pendente",
-
-                createdAt:
-                    new Date().toISOString()
-
-            };
-
-
-            const bookings =
-                getBookings();
-
-            bookings.push(booking);
-
-            saveBookings(bookings);
-
-
-            bookingForm.reset();
-
-
-            showMessage(
-                "Pedido de marcação enviado com sucesso!",
-                "success"
-            );
-
-
-            /*
-             * Se quiseres, aqui podemos posteriormente
-             * adicionar envio automático para WhatsApp.
-             */
-
-        });
+        );
 
     }
 
@@ -288,327 +453,147 @@ document.addEventListener("DOMContentLoaded", () => {
        8. BOTÕES DE MARCAÇÃO
     ===================================================== */
 
-    document.querySelectorAll(
-        'a[href="#marcacao"]'
-    ).forEach(button => {
+    document
+        .querySelectorAll('a[href="#marcacao"]')
+        .forEach(button => {
 
-        button.addEventListener("click", () => {
+            button.addEventListener(
+                "click",
+                () => {
 
-            setTimeout(() => {
+                    setTimeout(() => {
 
-                const nameInput =
-                    document.querySelector("#name");
+                        const nameInput =
+                            document.querySelector(
+                                "#clientName"
+                            );
 
-                if (nameInput) {
-                    nameInput.focus();
+
+                        if (nameInput) {
+
+                            nameInput.focus();
+
+                        }
+
+                    }, 700);
+
                 }
-
-            }, 500);
+            );
 
         });
 
-    });
-
 
     /* =====================================================
-       9. DATA MÍNIMA DA MARCAÇÃO
-    ===================================================== */
-
-    const dateInput =
-        document.querySelector("#date");
-
-    if (dateInput) {
-
-        const today =
-            new Date().toISOString().split("T")[0];
-
-        dateInput.min = today;
-    }
-
-
-    /* =====================================================
-       10. ÁREA DO CLIENTE
-    ===================================================== */
-
-    const clientButtons =
-        document.querySelectorAll(
-            "[data-client-action]"
-        );
-
-    clientButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const action =
-                button.dataset.clientAction;
-
-            handleClientAction(action);
-
-        });
-
-    });
-
-
-    /* =====================================================
-       11. LOGIN DO CLIENTE
-    ===================================================== */
-
-    const clientLogin =
-        document.querySelector("#client-login");
-
-    if (clientLogin) {
-
-        clientLogin.addEventListener("submit", event => {
-
-            event.preventDefault();
-
-            const email =
-                document.querySelector("#client-email")
-                ?.value.trim();
-
-            const password =
-                document.querySelector("#client-password")
-                ?.value;
-
-
-            if (!email || !password) {
-
-                showMessage(
-                    "Preencha o email e a palavra-passe.",
-                    "error"
-                );
-
-                return;
-            }
-
-
-            const clients =
-                getClients();
-
-            const client =
-                clients.find(
-                    item =>
-                        item.email.toLowerCase() ===
-                        email.toLowerCase() &&
-                        item.password === password
-                );
-
-
-            if (!client) {
-
-                showMessage(
-                    "Email ou palavra-passe incorretos.",
-                    "error"
-                );
-
-                return;
-            }
-
-
-            localStorage.setItem(
-                "delaine_logged_client",
-                JSON.stringify(client)
-            );
-
-
-            showMessage(
-                "Login efetuado com sucesso!",
-                "success"
-            );
-
-
-            setTimeout(() => {
-
-                window.location.href =
-                    "cliente.html";
-
-            }, 700);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       12. REGISTO DO CLIENTE
-    ===================================================== */
-
-    const clientRegister =
-        document.querySelector("#client-register");
-
-    if (clientRegister) {
-
-        clientRegister.addEventListener("submit", event => {
-
-            event.preventDefault();
-
-            const name =
-                document.querySelector("#register-name")
-                ?.value.trim();
-
-            const email =
-                document.querySelector("#register-email")
-                ?.value.trim();
-
-            const phone =
-                document.querySelector("#register-phone")
-                ?.value.trim();
-
-            const password =
-                document.querySelector("#register-password")
-                ?.value;
-
-
-            if (!name || !email || !phone || !password) {
-
-                showMessage(
-                    "Preencha todos os campos.",
-                    "error"
-                );
-
-                return;
-            }
-
-
-            const clients =
-                getClients();
-
-
-            const exists =
-                clients.some(
-                    client =>
-                        client.email.toLowerCase() ===
-                        email.toLowerCase()
-                );
-
-
-            if (exists) {
-
-                showMessage(
-                    "Este email já está registado.",
-                    "error"
-                );
-
-                return;
-            }
-
-
-            const newClient = {
-
-                id: generateId(),
-
-                name,
-
-                email,
-
-                phone,
-
-                password,
-
-                createdAt:
-                    new Date().toISOString()
-
-            };
-
-
-            clients.push(newClient);
-
-            localStorage.setItem(
-                "delaine_clients",
-                JSON.stringify(clients)
-            );
-
-
-            showMessage(
-                "Conta criada com sucesso!",
-                "success"
-            );
-
-
-            clientRegister.reset();
-
-
-            setTimeout(() => {
-
-                window.location.href =
-                    "cliente-login.html";
-
-            }, 800);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       13. LOGOUT CLIENTE
+       9. BOTÕES DE CLIENTE
     ===================================================== */
 
     document
-        .querySelectorAll("[data-client-logout]")
+        .querySelectorAll("[data-client-action]")
         .forEach(button => {
 
-            button.addEventListener("click", () => {
+            button.addEventListener(
+                "click",
+                () => {
 
-                localStorage.removeItem(
-                    "delaine_logged_client"
-                );
+                    const action =
+                        button.dataset.clientAction;
 
-                window.location.href =
-                    "index.html";
+                    handleClientAction(
+                        action
+                    );
 
-            });
+                }
+            );
 
         });
 
 
     /* =====================================================
-       14. LOGIN ADMINISTRADOR
+       10. LOGIN DO CLIENTE
     ===================================================== */
 
-    const adminLogin =
-        document.querySelector("#admin-login");
+    const clientLogin =
+        document.querySelector(
+            "#client-login"
+        );
 
 
-    if (adminLogin) {
+    if (clientLogin) {
 
-        adminLogin.addEventListener("submit", event => {
+        clientLogin.addEventListener(
+            "submit",
+            event => {
 
-            event.preventDefault();
-
-            const username =
-                document.querySelector("#admin-username")
-                ?.value.trim();
-
-            const password =
-                document.querySelector("#admin-password")
-                ?.value;
+                event.preventDefault();
 
 
-            /*
-             * DEMONSTRAÇÃO FRONTEND
-             *
-             * Estas credenciais NÃO devem ser usadas
-             * como sistema de segurança real.
-             */
-
-            const ADMIN_USER = "admin";
-            const ADMIN_PASSWORD = "Delaine@2026";
+                const email =
+                    document
+                        .querySelector(
+                            "#client-email"
+                        )
+                        ?.value
+                        .trim();
 
 
-            if (
-                username === ADMIN_USER &&
-                password === ADMIN_PASSWORD
-            ) {
+                const password =
+                    document
+                        .querySelector(
+                            "#client-password"
+                        )
+                        ?.value;
+
+
+                if (
+                    !email ||
+                    !password
+                ) {
+
+                    showMessage(
+                        "Preencha o email e a palavra-passe.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                const clients =
+                    getClients();
+
+
+                const client =
+                    clients.find(
+                        item =>
+                            item.email
+                                .toLowerCase() ===
+                            email.toLowerCase() &&
+                            item.password ===
+                            password
+                    );
+
+
+                if (!client) {
+
+                    showMessage(
+                        "Email ou palavra-passe incorretos.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
 
                 localStorage.setItem(
-                    "delaine_admin_logged",
-                    "true"
+                    "delaine_logged_client",
+                    JSON.stringify(client)
                 );
 
 
                 showMessage(
-                    "Acesso autorizado!",
+                    "Login efetuado com sucesso!",
                     "success"
                 );
 
@@ -616,30 +601,289 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
 
                     window.location.href =
-                        "admin.html";
+                        "cliente.html";
 
-                }, 600);
-
-            } else {
-
-                showMessage(
-                    "Credenciais de administrador inválidas.",
-                    "error"
-                );
+                }, 700);
 
             }
-
-        });
+        );
 
     }
 
 
     /* =====================================================
-       15. PROTEGER PAINEL ADMINISTRATIVO
+       11. REGISTO DO CLIENTE
+    ===================================================== */
+
+    const clientRegister =
+        document.querySelector(
+            "#client-register"
+        );
+
+
+    if (clientRegister) {
+
+        clientRegister.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .querySelector(
+                            "#register-name"
+                        )
+                        ?.value
+                        .trim();
+
+
+                const email =
+                    document
+                        .querySelector(
+                            "#register-email"
+                        )
+                        ?.value
+                        .trim();
+
+
+                const phone =
+                    document
+                        .querySelector(
+                            "#register-phone"
+                        )
+                        ?.value
+                        .trim();
+
+
+                const password =
+                    document
+                        .querySelector(
+                            "#register-password"
+                        )
+                        ?.value;
+
+
+                if (
+                    !name ||
+                    !email ||
+                    !phone ||
+                    !password
+                ) {
+
+                    showMessage(
+                        "Preencha todos os campos.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                const clients =
+                    getClients();
+
+
+                const exists =
+                    clients.some(
+                        client =>
+                            client.email
+                                .toLowerCase() ===
+                            email.toLowerCase()
+                    );
+
+
+                if (exists) {
+
+                    showMessage(
+                        "Este email já está registado.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                const newClient = {
+
+                    id: generateId(),
+
+                    name,
+
+                    email,
+
+                    phone,
+
+                    password,
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                clients.push(
+                    newClient
+                );
+
+
+                localStorage.setItem(
+                    "delaine_clients",
+                    JSON.stringify(clients)
+                );
+
+
+                showMessage(
+                    "Conta criada com sucesso!",
+                    "success"
+                );
+
+
+                clientRegister.reset();
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "cliente-login.html";
+
+                }, 800);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       12. LOGOUT CLIENTE
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            "[data-client-logout]"
+        )
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    localStorage.removeItem(
+                        "delaine_logged_client"
+                    );
+
+
+                    window.location.href =
+                        "index.html";
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       13. LOGIN ADMINISTRADOR
+    ===================================================== */
+
+    const adminLogin =
+        document.querySelector(
+            "#admin-login"
+        );
+
+
+    if (adminLogin) {
+
+        adminLogin.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+
+                const username =
+                    document
+                        .querySelector(
+                            "#admin-username"
+                        )
+                        ?.value
+                        .trim();
+
+
+                const password =
+                    document
+                        .querySelector(
+                            "#admin-password"
+                        )
+                        ?.value;
+
+
+                /*
+                 * ATENÇÃO:
+                 * Este login é apenas frontend.
+                 * Para segurança real é necessário
+                 * um backend.
+                 */
+
+                const ADMIN_USER =
+                    "admin";
+
+
+                const ADMIN_PASSWORD =
+                    "Delaine@2026";
+
+
+                if (
+                    username === ADMIN_USER &&
+                    password === ADMIN_PASSWORD
+                ) {
+
+                    localStorage.setItem(
+                        "delaine_admin_logged",
+                        "true"
+                    );
+
+
+                    showMessage(
+                        "Acesso autorizado!",
+                        "success"
+                    );
+
+
+                    setTimeout(() => {
+
+                        window.location.href =
+                            "admin.html";
+
+                    }, 600);
+
+                } else {
+
+                    showMessage(
+                        "Credenciais de administrador inválidas.",
+                        "error"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       14. PROTEGER PAINEL ADMIN
     ===================================================== */
 
     const adminPanel =
-        document.querySelector("[data-admin-panel]");
+        document.querySelector(
+            "[data-admin-panel]"
+        );
 
 
     if (adminPanel) {
@@ -656,6 +900,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "admin-login.html";
 
             return;
+
         }
 
 
@@ -665,85 +910,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       16. LOGOUT ADMIN
+       15. LOGOUT ADMIN
     ===================================================== */
 
     document
-        .querySelectorAll("[data-admin-logout]")
+        .querySelectorAll(
+            "[data-admin-logout]"
+        )
         .forEach(button => {
 
-            button.addEventListener("click", () => {
+            button.addEventListener(
+                "click",
+                () => {
 
-                localStorage.removeItem(
-                    "delaine_admin_logged"
-                );
+                    localStorage.removeItem(
+                        "delaine_admin_logged"
+                    );
 
-                window.location.href =
-                    "admin-login.html";
 
-            });
+                    window.location.href =
+                        "admin-login.html";
+
+                }
+            );
 
         });
 
 
     /* =====================================================
-       17. BOTÕES DE STATUS DAS MARCAÇÕES
-    ===================================================== */
-
-    document
-        .querySelectorAll("[data-booking-status]")
-        .forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                const id =
-                    button.dataset.bookingId;
-
-                const status =
-                    button.dataset.bookingStatus;
-
-                updateBookingStatus(
-                    id,
-                    status
-                );
-
-                loadAdminDashboard();
-
-            });
-
-        });
-
-
-    /* =====================================================
-       18. APAGAR MARCAÇÃO
-    ===================================================== */
-
-    document
-        .querySelectorAll("[data-delete-booking]")
-        .forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                const id =
-                    button.dataset.deleteBooking;
-
-                deleteBooking(id);
-
-                loadAdminDashboard();
-
-            });
-
-        });
-
-
-    /* =====================================================
-       19. ATUALIZAR ÁREA DO ADMIN
+       16. ATUALIZAR ADMIN
     ===================================================== */
 
     const refreshAdmin =
         document.querySelector(
             "[data-refresh-admin]"
         );
+
 
     if (refreshAdmin) {
 
@@ -756,7 +958,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       20. CONTADOR DO ADMIN
+       17. CONTADORES
     ===================================================== */
 
     updateBookingCounters();
@@ -775,16 +977,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function generateId() {
 
-    return Date.now().toString(36) +
+    return (
+        Date.now().toString(36) +
         Math.random()
             .toString(36)
-            .substring(2, 8);
+            .substring(2, 8)
+    );
 
 }
 
 
 /* =========================================================
-   OBTER MARCAÇÕES
+   MARCAÇÕES
 ========================================================= */
 
 function getBookings() {
@@ -806,10 +1010,6 @@ function getBookings() {
 }
 
 
-/* =========================================================
-   GUARDAR MARCAÇÕES
-========================================================= */
-
 function saveBookings(bookings) {
 
     localStorage.setItem(
@@ -821,7 +1021,7 @@ function saveBookings(bookings) {
 
 
 /* =========================================================
-   OBTER CLIENTES
+   CLIENTES
 ========================================================= */
 
 function getClients() {
@@ -844,10 +1044,13 @@ function getClients() {
 
 
 /* =========================================================
-   ATUALIZAR ESTADO DA MARCAÇÃO
+   ALTERAR ESTADO DA MARCAÇÃO
 ========================================================= */
 
-function updateBookingStatus(id, status) {
+function updateBookingStatus(
+    id,
+    status
+) {
 
     const bookings =
         getBookings();
@@ -864,9 +1067,13 @@ function updateBookingStatus(id, status) {
     }
 
 
-    booking.status = status;
+    booking.status =
+        status;
 
-    saveBookings(bookings);
+
+    saveBookings(
+        bookings
+    );
 
 
     showMessage(
@@ -902,7 +1109,9 @@ function deleteBooking(id) {
             );
 
 
-    saveBookings(bookings);
+    saveBookings(
+        bookings
+    );
 
 
     showMessage(
@@ -914,7 +1123,7 @@ function deleteBooking(id) {
 
 
 /* =========================================================
-   CARREGAR PAINEL ADMIN
+   PAINEL ADMIN
 ========================================================= */
 
 function loadAdminDashboard() {
@@ -928,10 +1137,12 @@ function loadAdminDashboard() {
             "[data-total-bookings]"
         );
 
+
     const pending =
         document.querySelector(
             "[data-pending-bookings]"
         );
+
 
     const confirmed =
         document.querySelector(
@@ -939,9 +1150,17 @@ function loadAdminDashboard() {
         );
 
 
+    const cancelled =
+        document.querySelector(
+            "[data-cancelled-bookings]"
+        );
+
+
     if (total) {
+
         total.textContent =
             bookings.length;
+
     }
 
 
@@ -950,7 +1169,8 @@ function loadAdminDashboard() {
         pending.textContent =
             bookings.filter(
                 item =>
-                    item.status === "Pendente"
+                    item.status ===
+                    "Pendente"
             ).length;
 
     }
@@ -961,7 +1181,20 @@ function loadAdminDashboard() {
         confirmed.textContent =
             bookings.filter(
                 item =>
-                    item.status === "Confirmada"
+                    item.status ===
+                    "Confirmada"
+            ).length;
+
+    }
+
+
+    if (cancelled) {
+
+        cancelled.textContent =
+            bookings.filter(
+                item =>
+                    item.status ===
+                    "Cancelada"
             ).length;
 
     }
@@ -982,13 +1215,14 @@ function loadAdminDashboard() {
 
         table.innerHTML = `
             <tr>
-                <td colspan="7">
+                <td colspan="8">
                     Ainda não existem marcações.
                 </td>
             </tr>
         `;
 
         return;
+
     }
 
 
@@ -996,83 +1230,132 @@ function loadAdminDashboard() {
         bookings
             .slice()
             .reverse()
-            .map(booking => `
+            .map(booking => {
 
-                <tr>
+                const safeId =
+                    escapeHTML(
+                        booking.id
+                    );
 
-                    <td>
-                        ${escapeHTML(booking.name)}
-                    </td>
 
-                    <td>
-                        ${escapeHTML(booking.phone)}
-                    </td>
+                const statusClass =
+                    String(
+                        booking.status || ""
+                    )
+                    .toLowerCase()
+                    .replace(/\s+/g, "-");
 
-                    <td>
-                        ${escapeHTML(booking.service)}
-                    </td>
 
-                    <td>
-                        ${formatDate(booking.date)}
-                    </td>
+                return `
 
-                    <td>
-                        <span class="status status-${booking.status
-                            .toLowerCase()
-                            .replace(" ", "-")}">
-                            ${escapeHTML(booking.status)}
-                        </span>
-                    </td>
+                    <tr>
 
-                    <td>
-                        ${escapeHTML(
-                            booking.message || "-"
-                        )}
-                    </td>
+                        <td>
+                            ${escapeHTML(
+                                booking.name
+                            )}
+                        </td>
 
-                    <td>
+                        <td>
+                            ${escapeHTML(
+                                booking.phone
+                            )}
+                        </td>
 
-                        <div class="admin-actions">
+                        <td>
+                            ${escapeHTML(
+                                booking.email ||
+                                "-"
+                            )}
+                        </td>
 
-                            <button
-                                type="button"
-                                data-booking-id="${booking.id}"
-                                data-booking-status="Confirmada"
+                        <td>
+                            ${escapeHTML(
+                                booking.service
+                            )}
+                        </td>
+
+                        <td>
+                            ${formatDate(
+                                booking.date
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                booking.time ||
+                                "-"
+                            )}
+                        </td>
+
+                        <td>
+
+                            <span
+                                class="status status-${statusClass}"
                             >
-                                Confirmar
-                            </button>
+                                ${escapeHTML(
+                                    booking.status
+                                )}
+                            </span>
 
-                            <button
-                                type="button"
-                                data-booking-id="${booking.id}"
-                                data-booking-status="Cancelada"
-                            >
-                                Cancelar
-                            </button>
+                        </td>
 
-                            <button
-                                type="button"
-                                data-delete-booking="${booking.id}"
-                            >
-                                Eliminar
-                            </button>
+                        <td>
 
-                        </div>
+                            ${escapeHTML(
+                                booking.message ||
+                                "-"
+                            )}
 
-                    </td>
+                        </td>
 
-                </tr>
+                        <td>
 
-            `)
+                            <div class="admin-actions">
+
+                                <button
+                                    type="button"
+                                    data-booking-id="${safeId}"
+                                    data-booking-status="Confirmada"
+                                >
+                                    Confirmar
+                                </button>
+
+
+                                <button
+                                    type="button"
+                                    data-booking-id="${safeId}"
+                                    data-booking-status="Cancelada"
+                                >
+                                    Cancelar
+                                </button>
+
+
+                                <button
+                                    type="button"
+                                    data-delete-booking="${safeId}"
+                                >
+                                    Eliminar
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            })
             .join("");
 
 
-    /*
-     * Reativar os botões que acabaram de ser criados.
-     */
+    /* Botões de estado */
 
     table
-        .querySelectorAll("[data-booking-status]")
+        .querySelectorAll(
+            "[data-booking-status]"
+        )
         .forEach(button => {
 
             button.addEventListener(
@@ -1084,6 +1367,7 @@ function loadAdminDashboard() {
                         button.dataset.bookingStatus
                     );
 
+
                     loadAdminDashboard();
 
                 }
@@ -1092,8 +1376,12 @@ function loadAdminDashboard() {
         });
 
 
+    /* Botões eliminar */
+
     table
-        .querySelectorAll("[data-delete-booking]")
+        .querySelectorAll(
+            "[data-delete-booking]"
+        )
         .forEach(button => {
 
             button.addEventListener(
@@ -1103,6 +1391,7 @@ function loadAdminDashboard() {
                     deleteBooking(
                         button.dataset.deleteBooking
                     );
+
 
                     loadAdminDashboard();
 
@@ -1129,15 +1418,18 @@ function updateBookingCounters() {
             "[data-total-bookings]"
         );
 
+
     const pending =
         document.querySelector(
             "[data-pending-bookings]"
         );
 
+
     const confirmed =
         document.querySelector(
             "[data-confirmed-bookings]"
         );
+
 
     const cancelled =
         document.querySelector(
@@ -1146,8 +1438,10 @@ function updateBookingCounters() {
 
 
     if (total) {
+
         total.textContent =
             bookings.length;
+
     }
 
 
@@ -1156,7 +1450,8 @@ function updateBookingCounters() {
         pending.textContent =
             bookings.filter(
                 item =>
-                    item.status === "Pendente"
+                    item.status ===
+                    "Pendente"
             ).length;
 
     }
@@ -1167,7 +1462,8 @@ function updateBookingCounters() {
         confirmed.textContent =
             bookings.filter(
                 item =>
-                    item.status === "Confirmada"
+                    item.status ===
+                    "Confirmada"
             ).length;
 
     }
@@ -1178,7 +1474,8 @@ function updateBookingCounters() {
         cancelled.textContent =
             bookings.filter(
                 item =>
-                    item.status === "Cancelada"
+                    item.status ===
+                    "Cancelada"
             ).length;
 
     }
@@ -1190,7 +1487,9 @@ function updateBookingCounters() {
    ÁREA DO CLIENTE
 ========================================================= */
 
-function handleClientAction(action) {
+function handleClientAction(
+    action
+) {
 
     switch (action) {
 
@@ -1232,6 +1531,7 @@ function handleClientAction(action) {
                 "delaine_logged_client"
             );
 
+
             window.location.href =
                 "index.html";
 
@@ -1243,10 +1543,13 @@ function handleClientAction(action) {
 
 
 /* =========================================================
-   MENSAGENS
+   MENSAGEM GERAL
 ========================================================= */
 
-function showMessage(message, type = "success") {
+function showMessage(
+    message,
+    type = "success"
+) {
 
     let messageBox =
         document.querySelector(
@@ -1257,10 +1560,14 @@ function showMessage(message, type = "success") {
     if (!messageBox) {
 
         messageBox =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         messageBox.className =
             "site-message";
+
 
         document.body.appendChild(
             messageBox
@@ -1289,6 +1596,54 @@ function showMessage(message, type = "success") {
 
 
 /* =========================================================
+   MENSAGEM DO FORMULÁRIO
+========================================================= */
+
+function showBookingStatus(
+    message,
+    type
+) {
+
+    const status =
+        document.querySelector(
+            "#bookingMessageStatus"
+        );
+
+
+    if (!status) {
+
+        showMessage(
+            message,
+            type
+        );
+
+        return;
+
+    }
+
+
+    status.textContent =
+        message;
+
+
+    status.className =
+        `form-status ${type}`;
+
+
+    setTimeout(() => {
+
+        status.textContent =
+            "";
+
+        status.className =
+            "form-status";
+
+    }, 5000);
+
+}
+
+
+/* =========================================================
    FORMATAR DATA
 ========================================================= */
 
@@ -1308,19 +1663,23 @@ function formatDate(date) {
     }
 
 
-    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    return (
+        `${parts[2]}/${parts[1]}/${parts[0]}`
+    );
 
 }
 
 
 /* =========================================================
-   SEGURANÇA BÁSICA PARA HTML
+   SEGURANÇA BÁSICA HTML
 ========================================================= */
 
 function escapeHTML(value) {
 
-    if (value === null ||
-        value === undefined) {
+    if (
+        value === null ||
+        value === undefined
+    ) {
 
         return "";
 
@@ -1328,10 +1687,25 @@ function escapeHTML(value) {
 
 
     return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
