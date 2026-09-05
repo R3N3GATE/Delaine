@@ -1,7 +1,6 @@
 /* =========================================================
    DELAINE.MAKEUP
-   STYLE.CSS
-   Design elegante • Responsivo • Profissional
+   STYLE.CSS — DESIGN PREMIUM & RESPONSIVO
 ========================================================= */
 
 
@@ -11,24 +10,24 @@
 
 :root {
     --burgundy: #5a2635;
-    --burgundy-dark: #3d1824;
-    --burgundy-light: #7a4050;
+    --burgundy-dark: #421a27;
+    --burgundy-light: #743b4c;
 
-    --gold: #b98242;
-    --gold-light: #d5a66b;
+    --gold: #b87935;
+    --gold-light: #d89a55;
 
-    --rose: #c99da6;
-    --rose-light: #ead8db;
+    --rose: #c59ba5;
+    --rose-light: #ead8dc;
 
     --cream: #fffaf7;
     --white: #ffffff;
 
-    --text: #33262a;
-    --text-light: #75696c;
+    --text: #3c3033;
+    --text-light: #776c70;
 
-    --border: rgba(90, 38, 53, 0.14);
+    --border: #eadfe0;
 
-    --shadow: 0 15px 45px rgba(61, 24, 36, 0.10);
+    --shadow: 0 15px 45px rgba(90, 38, 53, 0.10);
 
-    --radius: 18px;
-    --transition
+    --radius: 16px;
+    --
