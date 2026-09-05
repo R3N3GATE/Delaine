@@ -135,7 +135,7 @@ ol {
 .site-header.scrolled {
     background: rgba(255, 250, 247, 0.98);
     border-bottom-color: var(--border);
-    box-shadow: 0 8px 35px rgba(90, 38, 53, 0.10);
+}
 }
 
 
