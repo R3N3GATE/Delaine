@@ -1,805 +1,110 @@
-
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Delaine.Makeup — maquilhagem profissional, personalizada e sofisticada para realçar a sua beleza.">
-    <meta name="theme-color" content="#7a1f3d">
-    <title>Delaine.Makeup | A sua beleza, elevada a outro nível.</title>
 
-    <!-- O layout visual e o comportamento são controlados externamente. -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Delaine.Makeup — maquilhagem profissional, elegante e personalizada."
+    >
+
+    <meta
+        name="theme-color"
+        content="#5a2635"
+    >
+
+    <title>Delaine.Makeup | Beleza que realça você</title>
+
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main-content">Saltar para o conteúdo principal</a>
 
-    <!-- =========================================================
-         HEADER / NAVEGAÇÃO
-         ========================================================= -->
-    <header class="site-header" id="site-header">
-        <div class="header-inner">
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                type="button"
-                aria-label="Abrir menu"
-                aria-controls="main-navigation"
-                aria-expanded="false"
-            >
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
-            <a class="brand" href="#inicio" aria-label="Delaine.Makeup — início">
-                <span class="brand-name">Delaine.Makeup</span>
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <!-- LOGÓTIPO -->
+            <a href="#inicio" class="logo">
+                Delaine<span>.Makeup</span>
             </a>
 
-            <nav class="main-navigation" id="main-navigation" aria-label="Navegação principal">
-                <ul class="nav-list">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#marcacao">Marcação</a></li>
-                    <li><a href="#contactos">Contactos</a></li>
-                </ul>
-            </nav>
-        </div>
+            <!-- BOTÃO MENU MOBILE -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- MENU -->
+            <div class="nav-menu">
+
+                <a href="#inicio">Início</a>
+
+                <a href="#sobre">Sobre</a>
+
+                <a href="#servicos">Serviços</a>
+
+                <a href="#galeria">Galeria</a>
+
+                <a href="#marcacao">Marcação</a>
+
+                <a href="#contactos">Contactos</a>
+
+                <!-- ÁREA ADMINISTRADOR -->
+                <a
+                    href="admin.html"
+                    class="admin-link"
+                >
+                    Administrador
+                </a>
+
+            </div>
+
+        </nav>
+
     </header>
 
-    <main id="main-content">
 
-        <!-- =====================================================
+    <main>
+
+        <!-- =========================================
              HERO
-             ===================================================== -->
-        <section class="hero" id="inicio" aria-labelledby="hero-title">
-            <div class="hero-overlay">
-                <div class="container hero-content">
-                    <p class="eyebrow">Delaine.Makeup</p>
-                    <h1 id="hero-title">A sua beleza, elevada a outro nível.</h1>
-                    <p class="hero-description">
-                        Maquilhagem profissional e personalizada, criada para realçar
-                        a sua beleza, transmitir confiança, revelar elegância e tornar
-                        cada momento especial inesquecível.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="#marcacao">Fazer marcação</a>
-                        <a class="button button-secondary" href="#servicos">Ver serviços</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             SOBRE
-             ===================================================== -->
-        <section class="about section" id="sobre" aria-labelledby="about-title">
-            <div class="container about-grid">
-                <div class="about-media">
-                    <img
-                        src="images/about.jpg"
-                        alt="Maquilhagem profissional da Delaine.Makeup"
-                        loading="lazy"
-                    >
-                </div>
-
-                <div class="about-content">
-                    <p class="eyebrow">Sobre nós</p>
-                    <h2 id="about-title">Beleza criada para si</h2>
-
-                    <p>
-                        Na Delaine.Makeup, trabalhamos para realçar a beleza individual
-                        de cada cliente através de técnicas profissionais, atenção ao
-                        detalhe e maquilhagem cuidadosamente personalizada.
-                    </p>
-
-                    <p>
-                        Cada produção é pensada de acordo com a personalidade, ocasião
-                        e preferência de quem nos procura, proporcionando uma experiência
-                        marcada por elegância, confiança, profissionalismo e exclusividade.
-                    </p>
-
-                    <a class="button button-primary" href="#marcacao">Agendar agora</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             SERVIÇOS
-             Os cartões podem ser adicionados/removidos pelo JS.
-             data-active permite futura gestão de estado.
-             ===================================================== -->
-        <section class="services section section-alt" id="servicos" aria-labelledby="services-title">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Experiências de beleza</p>
-                    <h2 id="services-title">Os nossos serviços</h2>
-                    <p>
-                        Escolha a experiência que melhor combina com o seu momento.
-                    </p>
-                </div>
-
-                <div id="services-container" class="services-grid" aria-live="polite">
-
-                    <article
-                        class="service-card"
-                        id="service-1"
-                        data-service-id="service-1"
-                        data-active="true"
-                    >
-                        <div class="service-image">
-                            <img src="images/service-1.jpg" alt="Makeup Social" loading="lazy">
-                        </div>
-
-                        <div class="service-content">
-                            <p class="service-category">Social</p>
-                            <h3>Makeup Social</h3>
-
-                            <p class="service-description">
-                                Maquilhagem elegante e personalizada para eventos,
-                                celebrações, sessões fotográficas e ocasiões especiais.
-                            </p>
-
-                            <dl class="service-details">
-                                <div>
-                                    <dt>Preço</dt>
-                                    <dd>25.000 Kz</dd>
-                                </div>
-                                <div>
-                                    <dt>Duração</dt>
-                                    <dd>1h30</dd>
-                                </div>
-                                <div>
-                                    <dt>Deslocação</dt>
-                                    <dd>A confirmar</dd>
-                                </div>
-                            </dl>
-
-                            <button
-                                class="button button-primary service-book-button"
-                                type="button"
-                                data-service="service-1"
-                            >
-                                Escolher e agendar
-                            </button>
-                        </div>
-                    </article>
-
-                    <article
-                        class="service-card"
-                        id="service-2"
-                        data-service-id="service-2"
-                        data-active="true"
-                    >
-                        <div class="service-image">
-                            <img src="images/service-2.jpg" alt="Makeup Bridal" loading="lazy">
-                        </div>
-
-                        <div class="service-content">
-                            <p class="service-category">Noiva</p>
-                            <h3>Makeup Bridal</h3>
-
-                            <p class="service-description">
-                                Produção bridal sofisticada e cuidadosamente personalizada
-                                para um dos dias mais importantes.
-                            </p>
-
-                            <dl class="service-details">
-                                <div>
-                                    <dt>Preço</dt>
-                                    <dd>45.000 Kz</dd>
-                                </div>
-                                <div>
-                                    <dt>Duração</dt>
-                                    <dd>2h</dd>
-                                </div>
-                                <div>
-                                    <dt>Deslocação</dt>
-                                    <dd>A confirmar</dd>
-                                </div>
-                            </dl>
-
-                            <button
-                                class="button button-primary service-book-button"
-                                type="button"
-                                data-service="service-2"
-                            >
-                                Escolher e agendar
-                            </button>
-                        </div>
-                    </article>
-
-                    <article
-                        class="service-card"
-                        id="service-3"
-                        data-service-id="service-3"
-                        data-active="true"
-                    >
-                        <div class="service-image">
-                            <img src="images/service-3.jpg" alt="Makeup Premium" loading="lazy">
-                        </div>
-
-                        <div class="service-content">
-                            <p class="service-category">Premium</p>
-                            <h3>Makeup Premium</h3>
-
-                            <p class="service-description">
-                                Uma experiência exclusiva com atenção especial aos
-                                detalhes e acabamento de elevada sofisticação.
-                            </p>
-
-                            <dl class="service-details">
-                                <div>
-                                    <dt>Preço</dt>
-                                    <dd>60.000 Kz</dd>
-                                </div>
-                                <div>
-                                    <dt>Duração</dt>
-                                    <dd>2h30</dd>
-                                </div>
-                                <div>
-                                    <dt>Deslocação</dt>
-                                    <dd>A confirmar</dd>
-                                </div>
-                            </dl>
-
-                            <button
-                                class="button button-primary service-book-button"
-                                type="button"
-                                data-service="service-3"
-                            >
-                                Escolher e agendar
-                            </button>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             GALERIA
-             O JS pode substituir/adicionar/remover os itens.
-             ===================================================== -->
-        <section class="gallery section" id="galeria" aria-labelledby="gallery-title">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Inspiração</p>
-                    <h2 id="gallery-title">Galeria</h2>
-                    <p>
-                        Conheça alguns dos trabalhos e resultados da Delaine.Makeup.
-                    </p>
-                </div>
-
-                <div id="gallery-container" class="gallery-grid" aria-live="polite">
-                    <figure class="gallery-item" data-gallery-id="gallery-1">
-                        <img src="images/gallery-1.jpg" alt="Trabalho de maquilhagem 1" loading="lazy">
-                    </figure>
-                    <figure class="gallery-item" data-gallery-id="gallery-2">
-                        <img src="images/gallery-2.jpg" alt="Trabalho de maquilhagem 2" loading="lazy">
-                    </figure>
-                    <figure class="gallery-item" data-gallery-id="gallery-3">
-                        <img src="images/gallery-3.jpg" alt="Trabalho de maquilhagem 3" loading="lazy">
-                    </figure>
-                    <figure class="gallery-item" data-gallery-id="gallery-4">
-                        <img src="images/gallery-4.jpg" alt="Trabalho de maquilhagem 4" loading="lazy">
-                    </figure>
-                    <figure class="gallery-item" data-gallery-id="gallery-5">
-                        <img src="images/gallery-5.jpg" alt="Trabalho de maquilhagem 5" loading="lazy">
-                    </figure>
-                    <figure class="gallery-item" data-gallery-id="gallery-6">
-                        <img src="images/gallery-6.jpg" alt="Trabalho de maquilhagem 6" loading="lazy">
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             MARCAÇÃO
-             A validação real de disponibilidade deve ser feita no backend.
-             ===================================================== -->
-        <section class="booking section section-alt" id="marcacao" aria-labelledby="booking-title">
-            <div class="container booking-grid">
-                <div class="booking-intro">
-                    <p class="eyebrow">Reserve o seu momento</p>
-                    <h2 id="booking-title">Faça a sua marcação</h2>
-                    <p>
-                        Escolha o serviço, data e horário pretendidos. O pedido deverá
-                        ser posteriormente validado pelo sistema de backend quanto à
-                        disponibilidade.
-                    </p>
-                </div>
-
-                <form id="booking-form" class="booking-form" novalidate>
-                    <div class="form-group">
-                        <label for="service">Serviço</label>
-                        <select id="service" name="service" required>
-                            <option value="">Selecione um serviço</option>
-                            <option value="service-1">Makeup Social — 25.000 Kz</option>
-                            <option value="service-2">Makeup Bridal — 45.000 Kz</option>
-                            <option value="service-3">Makeup Premium — 60.000 Kz</option>
-                        </select>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date">Data</label>
-                            <input id="date" name="date" type="date" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="time">Horário</label>
-                            <input id="time" name="time" type="time" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">Nome completo</label>
-                        <input id="name" name="name" type="text" autocomplete="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Telefone/WhatsApp</label>
-                        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email <span>(opcional)</span></label>
-                        <input id="email" name="email" type="email" autocomplete="email">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="observations">Observações</label>
-                        <textarea id="observations" name="observations" rows="5"></textarea>
-                    </div>
-
-                    <div class="form-check">
-                        <input id="terms" name="terms" type="checkbox" required>
-                        <label for="terms">
-                            Confirmo que os dados fornecidos estão corretos e aceito que
-                            a marcação fique sujeita à confirmação de disponibilidade.
-                        </label>
-                    </div>
-
-                    <button class="button button-primary" type="submit">
-                        Enviar pedido de marcação
-                    </button>
-
-                    <p class="form-note">
-                        Este formulário está preparado para futura integração com
-                        backend, base de dados, autenticação, disponibilidade e notificações.
-                    </p>
-                </form>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             CONTACTOS
-             ===================================================== -->
-        <section class="contacts section" id="contactos" aria-labelledby="contacts-title">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Fale connosco</p>
-                    <h2 id="contacts-title">Contactos</h2>
-                </div>
-
-                <div class="contact-grid">
-                    <article class="contact-card">
-                        <h3>WhatsApp</h3>
-                        <p id="contact-whatsapp">+244 000 000 000</p>
-                    </article>
-
-                    <article class="contact-card">
-                        <h3>Email</h3>
-                        <p id="contact-email">hello@delaine.makeup</p>
-                    </article>
-
-                    <article class="contact-card">
-                        <h3>Localização</h3>
-                        <p id="contact-location">Luanda, Angola</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- =========================================================
-         ÁREA ADMINISTRATIVA
-         Separada semanticamente do conteúdo público.
-         hidden permite ao JS abrir a área quando necessário.
-         ========================================================= -->
-    <section class="admin-area" id="admin-area" aria-labelledby="admin-title" hidden>
-        <div class="admin-shell">
-
-            <!-- LOGIN -->
-            <div class="admin-login" id="admin-login">
-                <div class="admin-heading">
-                    <p class="eyebrow">Área reservada</p>
-                    <h2 id="admin-title">Login administrativo</h2>
-                    <p>
-                        O acesso definitivo deverá ser protegido por autenticação
-                        implementada no backend.
-                    </p>
-                </div>
-
-                <form id="admin-login-form" class="admin-form" novalidate>
-                    <div class="form-group">
-                        <label for="admin-email">Email</label>
-                        <input
-                            id="admin-email"
-                            name="admin-email"
-                            type="email"
-                            autocomplete="username"
-                            required
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="admin-password">Palavra-passe</label>
-                        <input
-                            id="admin-password"
-                            name="admin-password"
-                            type="password"
-                            autocomplete="current-password"
-                            required
-                        >
-                    </div>
-
-                    <button class="button button-primary" type="submit">Entrar</button>
-                </form>
-            </div>
-
-            <!-- DASHBOARD -->
-            <div class="admin-dashboard" id="admin-dashboard" hidden>
-                <header class="admin-header">
-                    <div>
-                        <p class="eyebrow">Gestão Delaine.Makeup</p>
-                        <h2>Dashboard</h2>
-                    </div>
-
-                    <button
-                        class="button button-secondary"
-                        id="admin-logout"
-                        type="button"
-                    >
-                        Sair
-                    </button>
-                </header>
-
-                <nav class="admin-navigation" aria-label="Navegação administrativa">
-                    <ul>
-                        <li><button type="button" data-admin-section="dashboard">Dashboard</button></li>
-                        <li><button type="button" data-admin-section="bookings">Marcações</button></li>
-                        <li><button type="button" data-admin-section="services">Serviços</button></li>
-                        <li><button type="button" data-admin-section="gallery">Galeria</button></li>
-                        <li><button type="button" data-admin-section="schedule">Horários</button></li>
-                        <li><button type="button" data-admin-section="notifications">Notificações</button></li>
-                        <li><button type="button" data-admin-section="settings">Definições</button></li>
-                        <li><button type="button" data-admin-section="logout">Sair</button></li>
-                    </ul>
-                </nav>
-
-                <!-- ESTATÍSTICAS -->
-                <section class="admin-panel" id="admin-dashboard-panel" aria-labelledby="dashboard-panel-title">
-                    <h3 id="dashboard-panel-title">Resumo</h3>
-
-                    <div class="stats-grid">
-                        <article class="stat-card">
-                            <span>Marcações hoje</span>
-                            <strong id="stat-today">0</strong>
-                        </article>
-
-                        <article class="stat-card">
-                            <span>Marcações pendentes</span>
-                            <strong id="stat-pending">0</strong>
-                        </article>
-
-                        <article class="stat-card">
-                            <span>Marcações confirmadas</span>
-                            <strong id="stat-confirmed">0</strong>
-                        </article>
-
-                        <article class="stat-card">
-                            <span>Total de marcações</span>
-                            <strong id="stat-total">0</strong>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- MARCAÇÕES -->
-                <section class="admin-panel" id="admin-bookings" aria-labelledby="bookings-title">
-                    <div class="panel-heading">
-                        <h3 id="bookings-title">Gestão de marcações</h3>
-                    </div>
-
-                    <div class="table-wrapper">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Cliente</th>
-                                    <th scope="col">Serviço</th>
-                                    <th scope="col">Data</th>
-                                    <th scope="col">Hora</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bookings-table-body">
-                                <!-- O JavaScript/backend irá inserir as marcações. -->
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- SERVIÇOS -->
-                <section class="admin-panel" id="admin-services" aria-labelledby="admin-services-title">
-                    <div class="panel-heading">
-                        <h3 id="admin-services-title">Gestão de serviços</h3>
-                        <p>
-                            Estrutura preparada para adicionar, editar, remover e
-                            ativar/desativar serviços.
-                        </p>
-                    </div>
-
-                    <form id="service-form" class="admin-form" enctype="multipart/form-data">
-                        <input id="service-id" name="service-id" type="hidden">
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="service-name">Nome</label>
-                                <input id="service-name" name="service-name" type="text">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="service-category">Categoria</label>
-                                <input id="service-category" name="service-category" type="text">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service-description">Descrição</label>
-                            <textarea id="service-description" name="service-description" rows="4"></textarea>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="service-price">Preço</label>
-                                <input id="service-price" name="service-price" type="text" inputmode="decimal">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="service-duration">Duração</label>
-                                <input id="service-duration" name="service-duration" type="text">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service-displacement">Deslocação</label>
-                            <input id="service-displacement" name="service-displacement" type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service-image">Imagem</label>
-                            <input id="service-image" name="service-image" type="file" accept="image/*">
-                        </div>
-
-                        <div class="form-check">
-                            <input id="service-active" name="service-active" type="checkbox" checked>
-                            <label for="service-active">Serviço ativo</label>
-                        </div>
-
-                        <div class="form-actions">
-                            <button class="button button-primary" type="submit">Guardar serviço</button>
-                            <button class="button button-secondary" id="service-delete" type="button">Remover serviço</button>
-                        </div>
-                    </form>
-                </section>
-
-                <!-- GALERIA ADMINISTRATIVA -->
-                <section class="admin-panel" id="admin-gallery" aria-labelledby="admin-gallery-title">
-                    <div class="panel-heading">
-                        <h3 id="admin-gallery-title">Gestão da galeria</h3>
-                        <p>Adicione, substitua ou remova as imagens apresentadas aos clientes.</p>
-                    </div>
-
-                    <div id="admin-gallery-container" class="admin-gallery-grid">
-                        <!-- O JavaScript/backend irá gerir as imagens. -->
-                    </div>
-
-                    <form id="gallery-form" class="admin-form" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="gallery-image">Adicionar ou substituir imagem</label>
-                            <input id="gallery-image" name="gallery-image" type="file" accept="image/*">
-                        </div>
-
-                        <button class="button button-primary" type="submit">Guardar imagem</button>
-                    </form>
-                </section>
-
-                <!-- HORÁRIOS -->
-                <section class="admin-panel" id="admin-schedule" aria-labelledby="schedule-title">
-                    <div class="panel-heading">
-                        <h3 id="schedule-title">Gestão de horários</h3>
-                    </div>
-
-                    <form id="schedule-form" class="admin-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="opening-time">Hora de abertura</label>
-                                <input id="opening-time" name="opening-time" type="time">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="closing-time">Hora de encerramento</label>
-                                <input id="closing-time" name="closing-time" type="time">
-                            </div>
-                        </div>
-
-                        <fieldset class="days-fieldset">
-                            <legend>Dias de funcionamento</legend>
-
-                            <div class="days-grid">
-                                <label><input type="checkbox" name="working-days" value="monday"> Segunda</label>
-                                <label><input type="checkbox" name="working-days" value="tuesday"> Terça</label>
-                                <label><input type="checkbox" name="working-days" value="wednesday"> Quarta</label>
-                                <label><input type="checkbox" name="working-days" value="thursday"> Quinta</label>
-                                <label><input type="checkbox" name="working-days" value="friday"> Sexta</label>
-                                <label><input type="checkbox" name="working-days" value="saturday"> Sábado</label>
-                                <label><input type="checkbox" name="working-days" value="sunday"> Domingo</label>
-                            </div>
-                        </fieldset>
-
-                        <button class="button button-primary" type="submit">Guardar horários</button>
-                    </form>
-                </section>
-
-                <!-- NOTIFICAÇÕES -->
-                <section class="admin-panel" id="admin-notifications" aria-labelledby="notifications-title">
-                    <div class="panel-heading">
-                        <h3 id="notifications-title">Notificações</h3>
-                    </div>
-
-                    <div id="notifications-container" class="notifications-list" aria-live="polite">
-                        <!-- Novas marcações e outras notificações serão inseridas aqui. -->
-                    </div>
-                </section>
-
-                <!-- DEFINIÇÕES -->
-                <section class="admin-panel" id="admin-settings" aria-labelledby="settings-title">
-                    <div class="panel-heading">
-                        <h3 id="settings-title">Definições</h3>
-                    </div>
-
-                    <form id="settings-form" class="admin-form">
-                        <div class="form-group">
-                            <label for="business-name">Nome do negócio</label>
-                            <input id="business-name" name="business-name" type="text" value="Delaine.Makeup">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="business-whatsapp">WhatsApp</label>
-                            <input id="business-whatsapp" name="business-whatsapp" type="tel">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="business-email">Email</label>
-                            <input id="business-email" name="business-email" type="email">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="business-location">Localização</label>
-                            <input id="business-location" name="business-location" type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="business-description">Descrição</label>
-                            <textarea id="business-description" name="business-description" rows="5"></textarea>
-                        </div>
-
-                        <button class="button button-primary" type="submit">Guardar definições</button>
-                    </form>
-                </section>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================
-         MODAL DE MARCAÇÃO
-         ========================================================= -->
-    <dialog class="booking-modal" id="booking-modal" aria-labelledby="booking-modal-title">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="booking-modal-title">Detalhes da marcação</h2>
-
-                <button
-                    id="close-booking-modal"
-                    class="modal-close"
-                    type="button"
-                    aria-label="Fechar detalhes da marcação"
-                >
-                    &times;
-                </button>
-            </div>
-
-            <div id="booking-modal-content" class="modal-body">
-                <!-- Conteúdo preenchido pelo JavaScript. -->
-            </div>
-        </div>
-    </dialog>
-
-    <!-- =========================================================
-         SISTEMA DE NOTIFICAÇÃO
-         ========================================================= -->
-    <aside
-        class="notification"
-        id="notification"
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-        hidden
-    >
-        <div class="notification-content">
-            <h2 id="notification-title">Notificação</h2>
-            <p id="notification-message"></p>
-        </div>
-
-        <button
-            class="notification-close"
-            id="notification-close"
-            type="button"
-            aria-label="Fechar notificação"
+        ========================================== -->
+
+        <section
+            id="inicio"
+            class="hero"
         >
-            &times;
-        </button>
-    </aside>
 
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div>
-                <a class="footer-brand" href="#inicio">Delaine.Makeup</a>
-                <p>Beleza, elegância e confiança em cada detalhe.</p>
-            </div>
+            <div class="hero-content">
 
-            <p class="copyright">
-                © <span id="current-year"></span> Delaine.Makeup. Todos os direitos reservados.
-            </p>
-        </div>
-    </footer>
+                <span class="hero-label">
+                    DELAINE.MAKEUP
+                </span>
 
-    <!-- =========================================================
-         VOLTAR AO TOPO
-         ========================================================= -->
-    <button
-        class="back-to-top"
-        id="back-to-top"
-        type="button"
-        aria-label="Voltar ao topo"
-        title="Voltar ao topo"
-    >
-        ↑
-    </button>
+                <h1>
+                    A sua beleza,
+                    <br>
+                    elevada a outro
+                    <br>
+                    nível.
+                </h1>
 
-    <!--
-        Estrutura preparada para:
-        - frontend responsivo;
-        - gestão dinâmica de serviços e galeria;
-        - marcações;
-        - horários;
-        - notificações;
-        - autenticação;
-        - backend e base de dados.
-
-        O HTML/CSS/JavaScript, isoladamente, não fornece autenticação,
-        persistência, segurança de credenciais ou bloqueio real de horários.
-        Essas funções deverão ser implementadas no backend.
-    -->
-</body>
-</html>
+                <p>
+                    Maquilhagem profissional, elegante e
+                    personalizada para
